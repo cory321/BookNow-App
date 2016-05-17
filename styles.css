@@ -1,0 +1,19 @@
+.font-lg {
+	font-size: larger;
+}
+
+.font-xl {
+	font-size: x-large;
+}
+
+.font-xxl {
+	font-size: xx-large;
+}
+
+.col-md-6.couples-overview h3 {
+	padding-top: 15px;
+}
+
+.col-md-6.couples-overview p {
+    color: #8994AF;
+}

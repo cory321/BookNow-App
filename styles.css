@@ -14,6 +14,16 @@
 	margin-bottom:30px;
 }
 
+.dashhead-titles {
+	margin-top:12px;
+}
+
+.dashhead-status-header {
+	margin-bottom:5px;
+	text-transform: uppercase;
+	color: darksalmon;
+}
+
 .col-md-6.couples-overview h3 {
 	padding-top: 5px;
 }

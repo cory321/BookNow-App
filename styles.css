@@ -78,3 +78,23 @@
 .doughnut-data-headings span.project-deposit-color {
 	color:#1ca8dd;
 }
+
+.status-header {
+	display: inline-block;
+	padding: 15px;
+}
+
+.status-upcoming {
+	color: darksalmon;
+	text-transform: uppercase;
+}
+
+.status-progress {
+	color:#1ca8dd;
+	text-transform: uppercase;
+}
+
+.status-complete {
+	color:#18b37e;
+	text-transform: uppercase;	
+}

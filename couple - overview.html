@@ -51,7 +51,7 @@
         </li>
         <li class="active">
           <a href="couples.html" title="Couples" data-toggle="tooltip" data-placement="right" data-container="body">
-            <span class="icon icon-users"></span>
+            <span class="icon icon-heart"></span>
             <small class="iconav-nav-label visible-xs-block">Couples</small>
           </a>
         </li>
@@ -69,7 +69,7 @@
         </li>
         <li >
           <a href="packages.html" title="Packages" data-toggle="tooltip" data-placement="right" data-container="body">
-            <span class="icon icon-cog"></span>
+            <span class="icon icon-documents"></span>
             <small class="iconav-nav-label visible-xs-block">Packages</small>
           </a>
         </li>
@@ -217,6 +217,11 @@
                   <td>12334 Ocean Whale Ave, San Diego, California 95934</td>
                 </tr>
               </table>
+              <div class="well well-lg">
+                <p>
+                  <span class="icon icon-mobile"></span> Send me a text message reminder 3 DAYS before this wedding event
+                </p>
+              </div>
        <!--        <div id="map"></div> -->
             </div>
           </div>
@@ -253,64 +258,75 @@
         <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%"><span class="sr-only">60% Complete</span></div>
       </div>
 
-      <ul>
-        <li>Handle Income / Expenses</li>
-        <li>Show Table of Payment History</li>
-        <li>Button for Requesting Payment from Couple</li>
-        <li>Venmo API Functionality for paying assistant</li>
-      </ul>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="panel panel-success">
+            <div class="panel-heading">
+              <h3 class="panel-title">Income</h3>
+            </div>
+            <div class="panel-body">
+              Panel content
+            </div>
+          </div>
 
-      <div class="table-responsive">
-          <table class="table" data-sort="table">
-            <thead>
-              <tr>
-                <th class="header"><input type="checkbox" class="select-all" id="selectAll"></th>
-                <th class="header">Order</th>
-                <th class="header">Customer name</th>
-                <th class="header headerSortUp">Description</th>
-                <th class="header">Date</th>
-                <th class="header">Total</th>
-              </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td><input type="checkbox" class="select-row"></td>
-                <td><a href="#">#10005</a></td>
-                <td>Name Right Here</td>
-                <td>Personal blog theme, admin theme</td>
-                <td>01/02/2015</td>
-                <td>$200.00</td>
-              </tr><tr>
-                <td><input type="checkbox" class="select-row"></td>
-                <td><a href="#">#10003</a></td>
-                <td>Name Another</td>
-                <td>Personal blog theme</td>
-                <td>01/01/2015</td>
-                <td>$100.00</td>
-              </tr><tr>
-                <td><input type="checkbox" class="select-row"></td>
-                <td><a href="#">#10004</a></td>
-                <td>One More</td>
-                <td>Marketing theme, personal blog theme, admin theme</td>
-                <td>01/01/2015</td>
-                <td>$300.00</td>
-              </tr><tr>
-                <td><input type="checkbox" class="select-row"></td>
-                <td><a href="#">#10001</a></td>
-                <td>First Last</td>
-                <td>Admin theme, marketing theme</td>
-                <td>01/01/2015</td>
-                <td>$200.00</td>
-              </tr><tr>
-                <td><input type="checkbox" class="select-row"></td>
-                <td><a href="#">#10002</a></td>
-                <td>Firstname Lastname</td>
-                <td>Admin theme</td>
-                <td>01/01/2015</td>
-                <td>$100.00</td>
-              </tr></tbody>
-          </table>
+          <ul>
+            <li>Handle Income / Expenses</li>
+            <li>Show Table of Payment History</li>
+            <li>Button for Requesting Payment from Couple</li>
+            <li>Venmo API Functionality for paying assistant</li>
+          </ul>
+
+          <div class="well well-lg">
+            <h3><span class="icon icon-mail"></span> Request Remaining Balance</h3>
+            <p>
+              <select class="custom-select custom-select-sm">
+                <option>1 Month</option>
+                <option>2 Months</option>
+                <option>1 Week</option>
+                <option>2 Weeks</option>
+              </select>
+
+              before the wedding date, we will send an email to this 
+              
+              <select class="custom-select custom-select-sm">
+                <option>Couple</option>
+                <option>Groom</option>
+                <option>Bride</option>
+              </select>
+
+              gently reminding him/her that their remaining balance in the amount of ($1,000.00) is DUE on or before the wedding date.
+            
+            </p>
+            <div class="radio custom-control custom-radio">
+              <label>
+                <input type="radio" id="radio1" name="radio">
+                <span class="custom-control-indicator"></span>
+                YES
+              </label>
+            </div>
+            <div class="radio custom-control custom-radio">
+              <label>
+                <input type="radio" id="radio2" name="radio">
+                <span class="custom-control-indicator"></span>
+                NO
+              </label>
+            </div>
+            <a href="#"><span class="icon icon-eye"></span> Preview this Email Message</a>
+          </div>
         </div>
+        <div class="col-md-6">
+          <div class="panel panel-danger">
+            <div class="panel-heading">
+              <h3 class="panel-title">Expenses</h3>
+            </div>
+            <div class="panel-body">
+              Panel content
+            </div>
+          </div>
+        </div>
+      </div>
+
+
     </div>
     <div role="tabpanel" class="tab-pane fade" id="project">
       <div class="progress">

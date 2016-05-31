@@ -254,20 +254,43 @@
       </div>
     </div>
     <div role="tabpanel" class="tab-pane fade" id="finances">
-      <div class="progress">
-        <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%"><span class="sr-only">60% Complete</span></div>
-      </div>
-
       <div class="row">
         <div class="col-md-6">
-          <div class="panel panel-success">
-            <div class="panel-heading">
-              <h3 class="panel-title">Income</h3>
+
+          <ul class="list-group">
+            <li class="list-group-header">Income</li>
+            <li class="list-group-item">
+            <div class="progress">
+              <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%"><span class="sr-only">60% Complete</span></div>
             </div>
-            <div class="panel-body">
-              Panel content
-            </div>
-          </div>
+            <h4>Fairytale Package - 3200</h4>
+            <h5 class="text-muted">Payment History</h5>
+              <table class="table">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Name</th>
+                  <th>Description</th>
+                  <th>Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>11.05.16</td>
+                  <td>John Doe</td>
+                  <td>Deposit</td>
+                  <td>800.00</td>
+                </tr>
+                <tr>
+                  <td>11.05.16</td>
+                  <td>John Doe</td>
+                  <td>Final Balance</td>
+                  <td>2,400.00</td>
+                </tr>
+              </tbody>
+              </table>
+            </li>
+          </ul>
 
           <ul>
             <li>Handle Income / Expenses</li>
@@ -286,7 +309,7 @@
                 <option>2 Weeks</option>
               </select>
 
-              before the wedding date, we will send an email to this 
+              before the wedding date, we will send an email to the 
               
               <select class="custom-select custom-select-sm">
                 <option>Couple</option>
@@ -294,7 +317,7 @@
                 <option>Bride</option>
               </select>
 
-              gently reminding him/her that their remaining balance in the amount of ($1,000.00) is DUE on or before the wedding date.
+              gently reminding them that their remaining balance in the amount of ($1,000.00) is DUE on or before the wedding date.
             
             </p>
             <div class="radio custom-control custom-radio">
@@ -315,14 +338,10 @@
           </div>
         </div>
         <div class="col-md-6">
-          <div class="panel panel-danger">
-            <div class="panel-heading">
-              <h3 class="panel-title">Expenses</h3>
-            </div>
-            <div class="panel-body">
-              Panel content
-            </div>
-          </div>
+          <ul class="list-group">
+            <li class="list-group-header">Expenses</li>
+            <li class="list-group-item"><span class="icon icon-eye"></span> Hotel</li>
+          </ul>
         </div>
       </div>
 

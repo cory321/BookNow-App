@@ -109,6 +109,10 @@
     text-transform: uppercase;
 }
 
+table.table-income, table.table-expenses {
+	margin-bottom: 0;
+}
+
 table.table-income td:last-child {
 	color:#18b37e;
 	text-transform: uppercase;

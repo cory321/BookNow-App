@@ -53,23 +53,25 @@
 	font-weight: bold;
 }
 
+.clickable-row:hover {
+	cursor: pointer;
+	background:#1A1C22;
+}
+
 #map {
     width: 100%;
     height: 400px;
 }
 
 .doughnut-headings {
-	text-align: center;
-	font-size: 2rem;
-	padding-bottom: 30px;
+	font-size:2rem;
 }
 
 .doughnut-data-headings {
-	text-align: center;
 	font-weight: bold;
 	font-size: 2rem;
 	color:#636B80;
-	margin-bottom: 2px;
+	margin-bottom: 20px;
 }
 
 .doughnut-data-headings span.payment-deposit-color {
@@ -125,4 +127,8 @@ table.table-expenses td:last-child {
 
 table.table-expenses td:last-child.text-grey {
 	color: #CCC;
+}
+
+.assistant-avatar {
+	width: 100px;
 }

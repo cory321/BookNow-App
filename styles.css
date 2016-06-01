@@ -98,3 +98,27 @@
 	color:#18b37e;
 	text-transform: uppercase;	
 }
+
+.tablehead-subtitle {
+	margin-top: 0;
+    margin-bottom: 5px;
+    font-weight: normal;
+    font-size: 85%;
+    color: #434857;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+table.table-income td:last-child {
+	color:#18b37e;
+	text-transform: uppercase;
+}
+
+table.table-expenses td:last-child {
+	color:#d9534f;
+	text-transform: uppercase;
+}
+
+table.table-expenses td:last-child.text-grey {
+	color: #CCC;
+}

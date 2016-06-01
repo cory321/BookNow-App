@@ -260,43 +260,43 @@
           <ul class="list-group">
             <li class="list-group-header">Income</li>
             <li class="list-group-item">
+            <h4>Fairytale Package - 3200</h4>
             <div class="progress">
               <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%"><span class="sr-only">60% Complete</span></div>
             </div>
-            <h4>Fairytale Package - 3200</h4>
-            <h5 class="text-muted">Payment History</h5>
-              <table class="table">
-              <thead>
-                <tr>
-                  <th>Date</th>
-                  <th>Name</th>
-                  <th>Description</th>
-                  <th>Amount</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>11.05.16</td>
-                  <td>John Doe</td>
-                  <td>Deposit</td>
-                  <td>800.00</td>
-                </tr>
-                <tr>
-                  <td>11.05.16</td>
-                  <td>John Doe</td>
-                  <td>Final Balance</td>
-                  <td>2,400.00</td>
-                </tr>
-              </tbody>
+            
+            <h5>Payment History</h5>
+              <table class="table table-income">
+                <thead>
+                  <tr class="tablehead-subtitle">
+                    <th>Date</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>11.05.16</td>
+                    <td>John Doe</td>
+                    <td>Deposit</td>
+                    <td>+ 800.00</td>
+                  </tr>
+                  <tr>
+                    <td>11.05.16</td>
+                    <td>John Doe</td>
+                    <td>Final Balance</td>
+                    <td>+ 2,400.00</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="tablehead-subtitle p-t-md">Total Income</td>
+                    <td class="p-t-md"><strong>3,200.00</strong></td>
+                  </tr>
+                </tbody>
               </table>
             </li>
-          </ul>
-
-          <ul>
-            <li>Handle Income / Expenses</li>
-            <li>Show Table of Payment History</li>
-            <li>Button for Requesting Payment from Couple</li>
-            <li>Venmo API Functionality for paying assistant</li>
           </ul>
 
           <div class="well well-lg">
@@ -309,7 +309,7 @@
                 <option>2 Weeks</option>
               </select>
 
-              before the wedding date, we will send an email to the 
+              before the wedding date, send an email to the 
               
               <select class="custom-select custom-select-sm">
                 <option>Couple</option>
@@ -339,12 +339,70 @@
         </div>
         <div class="col-md-6">
           <ul class="list-group">
-            <li class="list-group-header">Expenses</li>
-            <li class="list-group-item"><span class="icon icon-eye"></span> Hotel</li>
+            <li class="list-group-header">
+              <div class="row">
+                <div class="col-md-6">Expenses</div>
+                <div class="col-md-6 text-md-right"><a href="#" class="btn btn-primary-outline"><span class="icon icon-edit"> Edit</span></a></div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <table class="table table-expenses">
+                <thead>
+                  <tr class="tablehead-subtitle">
+                    <th>Date</th>
+                    <th>Item</th>
+                    <th>Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>11.07.16</td>
+                    <td><span class="icon icon-gauge"></span> Gas Mileage</td>
+                    <td class="text-grey">345</td>
+                  </tr>
+                  <tr>
+                    <td>11.07.16</td>
+                    <td><span class="icon icon-man"></span> Assistants</td>
+                    <td>- 300.00</td>
+                  </tr>
+                  <tr>
+                    <td>11.07.16</td>
+                    <td><span class="icon icon-home"></span> Hotel</td>
+                    <td>- 240.00</td>
+                  </tr>
+                  <tr>
+                    <td>11.07.16</td>
+                    <td><span class="icon icon-aircraft"></span> Airfare</td>
+                    <td class="text-muted">- 0.00</td>
+                  </tr>
+                  <tr>
+                    <td>11.07.16</td>
+                    <td><span class="icon icon-bowl"></span> Dining</td>
+                    <td>- 50.00</td>
+                  </tr>
+                  <tr>
+                  <td>11.07.16</td>
+                    <td><span class="icon icon-box"></span> Package Materials</td>
+                    <td>- 45.00</td>
+                  </tr>
+                  <tr>
+                  <td>11.07.16</td>
+                    <td><span class="icon icon-paper-plane"></span> Shipping</td>
+                    <td>- 8.00</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td></td>
+                    <td class="tablehead-subtitle p-t-md">Total Expenses</td>
+                    <td class="p-t-md"><strong>643.00</strong></td>
+                  </tr>
+                </tfoot>
+              </table>
+            </li>
           </ul>
         </div>
       </div>
-
 
     </div>
     <div role="tabpanel" class="tab-pane fade" id="project">

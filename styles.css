@@ -1,3 +1,9 @@
+@media (min-width: 768px) {
+	.iconav {
+		width:auto;
+	}
+}
+
 .font-lg {
 	font-size: larger;
 }

@@ -1,0 +1,77 @@
+<%= form_for(@couple) do |f| %>
+  <% if @couple.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@couple.errors.count, "error") %> prohibited this couple from being saved:</h2>
+
+      <ul>
+      <% @couple.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :wedding_date %><br>
+    <%= f.date_select :wedding_date %>
+  </div>
+  <div class="field">
+    <%= f.label :groom_first_name %><br>
+    <%= f.text_area :groom_first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :groom_last_name %><br>
+    <%= f.text_area :groom_last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :groom_email %><br>
+    <%= f.text_area :groom_email %>
+  </div>
+  <div class="field">
+    <%= f.label :groom_phone %><br>
+    <%= f.text_area :groom_phone %>
+  </div>
+  <div class="field">
+    <%= f.label :groom_location_gr %><br>
+    <%= f.text_area :groom_location_gr %>
+  </div>
+  <div class="field">
+    <%= f.label :bride_first_name %><br>
+    <%= f.text_area :bride_first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :bride_last_name %><br>
+    <%= f.text_area :bride_last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :bride_email %><br>
+    <%= f.text_area :bride_email %>
+  </div>
+  <div class="field">
+    <%= f.label :bride_phone %><br>
+    <%= f.text_area :bride_phone %>
+  </div>
+  <div class="field">
+    <%= f.label :bride_location_gr %><br>
+    <%= f.text_area :bride_location_gr %>
+  </div>
+  <div class="field">
+    <%= f.label :planner_first_name %><br>
+    <%= f.text_area :planner_first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :planner_last_name %><br>
+    <%= f.text_area :planner_last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :planner_email %><br>
+    <%= f.text_area :planner_email %>
+  </div>
+  <div class="field">
+    <%= f.label :planner_phone %><br>
+    <%= f.text_area :planner_phone %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Couples</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Wedding date</th>
+      <th>Groom first name</th>
+      <th>Groom last name</th>
+      <th>Groom email</th>
+      <th>Groom phone</th>
+      <th>Groom location gr</th>
+      <th>Bride first name</th>
+      <th>Bride last name</th>
+      <th>Bride email</th>
+      <th>Bride phone</th>
+      <th>Bride location gr</th>
+      <th>Planner first name</th>
+      <th>Planner last name</th>
+      <th>Planner email</th>
+      <th>Planner phone</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @couples.each do |couple| %>
+      <tr>
+        <td><%= couple.wedding_date %></td>
+        <td><%= couple.groom_first_name %></td>
+        <td><%= couple.groom_last_name %></td>
+        <td><%= couple.groom_email %></td>
+        <td><%= couple.groom_phone %></td>
+        <td><%= couple.groom_location_gr %></td>
+        <td><%= couple.bride_first_name %></td>
+        <td><%= couple.bride_last_name %></td>
+        <td><%= couple.bride_email %></td>
+        <td><%= couple.bride_phone %></td>
+        <td><%= couple.bride_location_gr %></td>
+        <td><%= couple.planner_first_name %></td>
+        <td><%= couple.planner_last_name %></td>
+        <td><%= couple.planner_email %></td>
+        <td><%= couple.planner_phone %></td>
+        <td><%= link_to 'Show', couple %></td>
+        <td><%= link_to 'Edit', edit_couple_path(couple) %></td>
+        <td><%= link_to 'Destroy', couple, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Couple', new_couple_path %>

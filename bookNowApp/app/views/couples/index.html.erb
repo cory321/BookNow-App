@@ -1,0 +1,17 @@
+<h4>Couples</h4>
+
+<% @couples.each do |couple| %>
+	<%= couple.wedding_date %>
+	<%= couple.groom_first_name %>
+	<%= couple.groom_last_name  %>
+	<%= couple.groom_email %>
+	<%= couple.groom_phone %>
+	<%= couple.groom_location_gr %>
+	<%= couple.bride_first_name %>
+	<%= couple.bride_last_name  %>
+	<%= couple.bride_email %>
+	<%= couple.bride_phone %>
+	<%= couple.bride_location_gr %>
+	<%= couple.planner_first_name %>
+	<%= couple.planner_last_name %>
+<% end %>

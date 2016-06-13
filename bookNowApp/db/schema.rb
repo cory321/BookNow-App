@@ -11,27 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160610090044) do
+ActiveRecord::Schema.define(version: 20160613220758) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "couples", force: :cascade do |t|
     t.date     "wedding_date"
-    t.text     "groom_first_name"
-    t.text     "groom_last_name"
-    t.text     "groom_email"
-    t.text     "groom_phone"
-    t.text     "groom_location_gr"
-    t.text     "bride_first_name"
-    t.text     "bride_last_name"
-    t.text     "bride_email"
-    t.text     "bride_phone"
-    t.text     "bride_location_gr"
-    t.text     "planner_first_name"
-    t.text     "planner_last_name"
-    t.text     "planner_email"
-    t.text     "planner_phone"
+    t.string   "groom_first_name"
+    t.string   "groom_last_name"
+    t.string   "groom_email"
+    t.string   "groom_phone"
+    t.string   "groom_location_gr"
+    t.string   "bride_first_name"
+    t.string   "bride_last_name"
+    t.string   "bride_email"
+    t.string   "bride_phone"
+    t.string   "bride_location_gr"
+    t.string   "planner_first_name"
+    t.string   "planner_last_name"
+    t.string   "planner_email"
+    t.string   "planner_phone"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end

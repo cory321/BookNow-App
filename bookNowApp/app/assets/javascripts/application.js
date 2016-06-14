@@ -16,6 +16,12 @@
 //= require_tree .
 //= require application
 //= require chart
-//= require tablesorter.min
 //= require toolkit
 //= require umd/tab
+//= require tablesorter.min
+
+$(document).ready(function($) {
+    $(".clickable-row").click(function() {
+        window.document.location = $(this).data("url");
+    });
+});

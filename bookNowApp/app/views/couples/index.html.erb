@@ -28,7 +28,6 @@
         <tbody>
         
         <% @couples.each do |couple| %>
-        	
         <tr class="clickable-row" data-url='<%= couple_path(couple)%>'>
             <td><a href="#">#<%= couple.id %></a></td>
             <td><%= couple.wedding_date %></td>
@@ -97,6 +96,3 @@
           </tbody>
       </table>
   </div>
-
-
-

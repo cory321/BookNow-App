@@ -9,14 +9,10 @@
     <meta name="author" content="">
 
     <title>Wedding Couples</title>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
 
     <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" rel="stylesheet">
-<!--     <link href="assets/stylesheets/toolkit-inverse.css" rel="stylesheet">
-    <link href="assets/stylesheets/app.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css"> -->
 
     <style>
       /* note: this is a hack for ios iframe for bootstrap themes shopify page */
@@ -84,7 +80,7 @@
         </li>
         <li>
           <a href="account.html" title="Account" data-toggle="tooltip" data-placement="right" data-container="body">
-            <img src="assets/img/avatar-mdo.png" alt="" class="img-circle img-responsive">
+            <img src="<%= asset_path('avatar-mdo.png') %>" alt="" class="img-circle img-responsive">
             <small class="iconav-nav-label visible-xs-block">Account</small>
           </a>
         </li>
@@ -100,7 +96,7 @@
 </div>
 
 
-<!--     <script src="assets/javascripts/jquery.min.js"></script>
+<!--<script src="assets/javascripts/jquery.min.js"></script>
     <script src="assets/javascripts/chart.js"></script>
     <script src="assets/javascripts/tablesorter.min.js"></script>
     <script src="assets/javascripts/toolkit.js"></script>
@@ -119,6 +115,7 @@
     -->
    <!--  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> -->
     <!-- <script src="assets/javascripts/script.js"></script> -->
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
     <script>
       // execute/clear BS loaders for docs

@@ -1,21 +1,336 @@
-<h3><%= @couple.groom_first_name %> and <%= @couple.bride_first_name %>
-</h3>
-<h4><%= @couple.wedding_date %></h4>
+  <section class="dashhead">
+    <div class="dashhead-titles">
+      <h2 class="dashhead-title"><%= @couple.groom_first_name %> and <%= @couple.bride_first_name %></h2>
+    </div>
 
-<p>	
-	<%= @couple.groom_first_name %>
-	<%= @couple.groom_last_name  %>
-	<%= @couple.groom_email %>
-	<%= @couple.groom_phone %>
-	<%= @couple.groom_location_gr %>
-	<%= @couple.bride_first_name %>
-	<%= @couple.bride_last_name  %>
-	<%= @couple.bride_email %>
-	<%= @couple.bride_phone %>
-	<%= @couple.bride_location_gr %>
-	<%= @couple.planner_first_name %>
-	<%= @couple.planner_last_name %>
-	<%= @couple.ceremony_address %>
-	<%= @couple.reception_address %>
-	<%= @couple.marital_address %>
-</p>
+    <div class="dashhead-toolbar">
+      <div class="dashead-toolbar-item">
+      </div>
+      <div class="dashead-toolbar-item">
+        <h4 class="dashhead-status-header"><span class="icon icon-calendar"></span> <%= @date.strftime("%B %d, %Y") %></h4>
+        <h4><span class="icon icon-location-pin"></span><%= @couple.ceremony_address %></h4>
+      </div>
+    </div>
+  </section>
+
+  <ul class="nav nav-bordered m-t m-b-0" role="tablist">
+    <li class="active" role="presentation">
+      <a href="#overview" role="tab" data-toggle="tab" aria-controls="overview">Overview</a>
+    </li>
+    <li role="presentation">
+      <a href="#finances" role="tab" data-toggle="tab" aria-controls="finances">Finances</a>
+    </li>
+    <li role="presentation">
+      <a href="#project" role="tab" data-toggle="tab" aria-controls="project">Project</a>
+    </li>
+  </ul>
+
+  <hr class="m-t-0 m-b-md">
+
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane fade in active" id="overview">
+      <div class="row">
+        <div class="col-md-8 couples-overview-column">
+          <div class="row">
+            <div class="col-sm-6">
+              <h3 class="couples-info-headings">Groom</h3>
+              <table class="couples-info-table">
+                <tr>
+                  <td><span class="icon icon-user"></span></td>
+                  <td><%= @couple.groom_first_name %> <%= @couple.groom_last_name  %></td>
+                </tr>
+                <tr>
+                  <td><span class="icon icon-phone"></span></td>
+                  <td><%= @couple.groom_phone %></td>
+                </tr>
+                <tr>
+                  <td><span class="icon icon-mail"></span></td>
+                  <td><%= @couple.groom_email %></td>
+                </tr>
+              </table>
+            </div>
+            <div class="col-sm-6">
+              <h3 class="couples-info-headings">Bride</h3>
+              <table class="couples-info-table">
+                <tr>
+                  <td><span class="icon icon-user"></span></td>
+                  <td><%= @couple.bride_first_name %> <%= @couple.bride_last_name %></td>
+                </tr>
+                <tr>
+                  <td><span class="icon icon-phone"></span></td>
+                  <td><%= @couple.bride_phone %></td>
+                </tr>
+                <tr>
+                  <td><span class="icon icon-mail"></span></td>
+                  <td><%= @couple.bride_email %></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <h3 class="couples-info-headings">Coordinator</h3>
+              <table class="couples-info-table">
+                <tr>
+                  <td><span class="icon icon-user"></span></td>
+                  <td><%= @couple.planner_first_name %> <%= @couple.planner_last_name %></td>
+                </tr>
+                <tr>
+                  <td><span class="icon icon-phone"></span></td>
+                  <td>--</td>
+                </tr>
+                <tr>
+                  <td><span class="icon icon-mail"></span></td>
+                  <td>--</td>
+                </tr>
+              </table>
+            </div>
+            <div class="col-sm-6">
+              <h3 class="couples-info-headings">Photographer</h3>
+              <table class="couples-info-table">
+                <tr>
+                  <td><span class="icon icon-user"></span></td>
+                  <td>--</td>
+                </tr>
+                <tr>
+                  <td><span class="icon icon-phone"></span></td>
+                  <td>--</td>
+                </tr>
+                <tr>
+                  <td><span class="icon icon-mail"></span></td>
+                  <td>--</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <h3 class="couples-info-headings">Locations</h3>
+              <table class="couples-info-table">
+                <tr>
+                  <td><span class="icon icon-location-pin"></span> (GROOM) Getting Ready</td>
+                  <td><%= @couple.groom_location_gr %></td>
+                </tr>
+                <tr>
+                  <td><span class="icon icon-location-pin"></span> (BRIDE) Getting Ready</td>
+                  <td><%= @couple.bride_location_gr %></td>
+                </tr>
+                <tr>
+                  <td><span class="icon icon-location-pin"></span> Ceremony</td>
+                  <td><%= @couple.ceremony_address %></td>
+                </tr>
+                <tr>
+                  <td><span class="icon icon-location-pin"></span> Reception</td>
+                  <td><%= @couple.reception_address %></td>
+                </tr>
+                <tr>
+                  <td><span class="icon icon-location-pin"></span> Marital Address</td>
+                  <td><%= @couple.marital_address %></td>
+                </tr>
+              </table>
+              <div class="well well-lg">
+                <p>
+                  <span class="icon icon-mobile"></span> Send me a text message reminder 3 DAYS before this wedding event
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+
+        <div class="w-md m-x-auto">
+          <canvas
+            class="ex-graph"
+            width="200" height="200"
+            data-chart="doughnut"
+            data-value="[{ value: 800, color: '#1bc98e', label: 'Initial Deposit' }, { value: 2400, color: '#2d403a', label: 'Remainder Due' }]"
+            data-segment-stroke-color="#252830">
+          </canvas>
+        </div>
+        <h5 class="doughnut-headings text-center">Deposit vs Remainder</h5>
+        <h4 class="doughnut-data-headings text-center"><span class="payment-deposit-color">800</span> / 3200</h4>
+        <div class="w-md m-x-auto">
+          <canvas
+            class="ex-graph"
+            width="200" height="200"
+            data-chart="doughnut"
+            data-value="[{ value: 45, color: '#1ca8dd', label: 'Percent Completed' }, { value: 55, color: '#2f4750', label: 'Percent Remaining' }]"
+            data-segment-stroke-color="#252830">
+          </canvas>
+        </div>
+        <h5 class="doughnut-headings text-center">Project Completion</h5>
+        <h4 class="doughnut-data-headings text-center"><span class="project-deposit-color">45</span> / 100</h4>
+        </div>
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="finances">
+      <div class="row">
+        <div class="col-md-6">
+
+          <ul class="list-group">
+            <li class="list-group-header">Income</li>
+            <li class="list-group-item">
+              <h4>Fairytale Package - 3200</h4>
+              <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%"><span class="sr-only">65% Complete</span></div>
+              </div>
+            
+              <table class="table table-income">
+                <thead>
+                  <tr class="tablehead-subtitle">
+                    <th>Date</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>11.05.16</td>
+                    <td>John Doe</td>
+                    <td>Deposit</td>
+                    <td>+ 800.00</td>
+                  </tr>
+                  <tr>
+                    <td>11.05.16</td>
+                    <td>John Doe</td>
+                    <td>Payment Received</td>
+                    <td>+ 1,200.00</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" class="p-t"><a class="btn btn-sm btn-primary-outline"><span class="icon icon-mail"></span> Request a Payment</a></td>
+                    <td class="tablehead-subtitle p-t">Total Income</td>
+                    <td class="p-t"><strong>2,000.00</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <ul class="list-group">
+            <li class="list-group-header">
+              Expenses
+            </li>
+            <li class="list-group-item">
+              <table class="table table-expenses">
+                <thead>
+                  <tr class="tablehead-subtitle">
+                    <th>Date</th>
+                    <th>Item</th>
+                    <th>Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>11.07.16</td>
+                    <td><span class="icon icon-gauge"></span> Gas Mileage</td>
+                    <td class="text-grey">345</td>
+                  </tr>
+                  <tr>
+                    <td>11.07.16</td>
+                    <td><span class="icon icon-man"></span> Assistants</td>
+                    <td>- 300.00</td>
+                  </tr>
+                  <tr>
+                    <td>11.07.16</td>
+                    <td><span class="icon icon-home"></span> Hotel</td>
+                    <td>- 240.00</td>
+                  </tr>
+                  <tr>
+                    <td>11.07.16</td>
+                    <td><span class="icon icon-aircraft"></span> Airfare</td>
+                    <td class="text-muted">- 0.00</td>
+                  </tr>
+                  <tr>
+                    <td>11.07.16</td>
+                    <td><span class="icon icon-bowl"></span> Dining</td>
+                    <td>- 50.00</td>
+                  </tr>
+                  <tr>
+                  <td>11.07.16</td>
+                    <td><span class="icon icon-box"></span> Package Materials</td>
+                    <td>- 45.00</td>
+                  </tr>
+                  <tr>
+                  <td>11.07.16</td>
+                    <td><span class="icon icon-paper-plane"></span> Shipping</td>
+                    <td>- 8.00</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td class="p-t"><a class="btn btn-sm btn-primary-outline"><span class="icon icon-man"></span> Pay Assistants</a></td>
+                    <td class="tablehead-subtitle p-t">Total Expenses</td>
+                    <td class="p-t"><strong>643.00</strong></td>
+                  </tr>
+                </tfoot>
+              </table>
+            </li>
+          </ul>
+        </div>
+      <!--   <div class="col-md-2">
+          <div class="well well-sm">
+            <h4><span class="icon icon-mail"></span> Request Payment</h4>
+            <p>
+              <select class="custom-select custom-select-sm">
+                <option>1 Month</option>
+                <option>2 Months</option>
+                <option>1 Week</option>
+                <option>2 Weeks</option>
+              </select>
+
+              before the wedding date, send an email to the 
+              
+              <select class="custom-select custom-select-sm">
+                <option>Couple</option>
+                <option>Groom</option>
+                <option>Bride</option>
+              </select>
+
+              gently reminding them that their remaining balance in the amount of
+
+              {AMOUNT}
+
+              is DUE on or before the wedding date.
+            
+            </p>
+            <div class="radio custom-control custom-radio">
+              <label>
+                <input type="radio" id="radio1" name="radio">
+                <span class="custom-control-indicator"></span>
+                YES
+              </label>
+            </div>
+            <div class="radio custom-control custom-radio">
+              <label>
+                <input type="radio" id="radio2" name="radio">
+                <span class="custom-control-indicator"></span>
+                NO
+              </label>
+            </div>
+            <a href="#"><span class="icon icon-eye"></span> Preview this Email Message</a>
+          </div>
+          <div class="well well-sm">
+            <h4><span class="icon icon-man"></span> Pay Your Assistants</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi illum quae, nulla voluptate? Quo dolore sunt laboriosam molestias doloremque dignissimos, eius corporis, soluta ut saepe reiciendis praesentium laborum unde quasi.</p>
+          </div>
+        </div> -->
+      </div>
+
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="project">
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%"><span class="sr-only">60% Complete</span></div>
+      </div>
+      <ul>
+        <li>Package Details</li>
+        <li>To-Do Lists</li>
+        <li>Templates</li>
+        <li>Progress Bars</li>
+      </ul>
+    </div>
+  </div>
+  </div>
+</div>
+

@@ -6,5 +6,6 @@ class CouplesController < ApplicationController
 
   def show
   	@couple = Couple.find(params[:id])
+  	@date = @couple.wedding_date
   end
 end

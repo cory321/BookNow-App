@@ -14,3 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require application
+//= require chart
+//= require tablesorter.min
+//= require toolkit
+//= require umd/tab

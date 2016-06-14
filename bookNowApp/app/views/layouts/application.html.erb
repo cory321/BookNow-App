@@ -1,14 +1,128 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>BookNowApp</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <title>Wedding Couples</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+
+    <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" rel="stylesheet">
+<!--     <link href="assets/stylesheets/toolkit-inverse.css" rel="stylesheet">
+    <link href="assets/stylesheets/app.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> -->
+
+    <style>
+      /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+      /* this chunk of css is not part of the toolkit :) */
+      body {
+        width: 1px;
+        min-width: 100%;
+        *width: 100%;
+      }
+    </style>
+  </head>
+
+
 <body>
 
-<%= yield %>
+<div class="with-iconav">
 
-</body>
+  <nav class="iconav">
+    <a class="iconav-brand" href="index.html">
+      <span class="icon icon-leaf iconav-brand-icon"></span>
+    </a>
+    <div class="iconav-slider">
+      <ul class="nav nav-pills iconav-nav">
+        <li>
+          <a href="overview.html" title="Overview" data-toggle="tooltip" data-placement="right" data-container="body">
+            <span class="icon icon-home"></span>
+            <small class="iconav-nav-label visible-xs-block">Overview</small>
+          </a>
+        </li>
+        <li>
+          <a href="calendar.html" title="Calendar" data-toggle="tooltip" data-placement="right" data-container="body">
+            <span class="icon icon-calendar"></span>
+            <small class="iconav-nav-label visible-xs-block">Calendar</small>
+          </a>
+        </li>
+        <li class="active">
+          <a href="couples-list.html" title="Couples" data-toggle="tooltip" data-placement="right" data-container="body">
+            <span class="icon icon-heart"></span>
+            <small class="iconav-nav-label visible-xs-block">Couples</small>
+          </a>
+        </li>
+        <li >
+          <a href="assistants.html" title="Assistants" data-toggle="tooltip" data-placement="right" data-container="body">
+            <span class="icon icon-man"></span>
+            <small class="iconav-nav-label visible-xs-block">Assistants</small>
+          </a>
+        </li>
+        <li >
+          <a href="finances.html" title="Finances" data-toggle="tooltip" data-placement="right" data-container="body">
+            <span class="icon icon-credit"></span>
+            <small class="iconav-nav-label visible-xs-block">Finances</small>
+          </a>
+        </li>
+        <li >
+          <a href="packages.html" title="Packages" data-toggle="tooltip" data-placement="right" data-container="body">
+            <span class="icon icon-documents"></span>
+            <small class="iconav-nav-label visible-xs-block">Packages</small>
+          </a>
+        </li>
+        <li >
+          <a href="settings.html" title="Settings" data-toggle="tooltip" data-placement="right" data-container="body">
+            <span class="icon icon-cog"></span>
+            <small class="iconav-nav-label visible-xs-block">Settings</small>
+          </a>
+        </li>
+        <li>
+          <a href="account.html" title="Account" data-toggle="tooltip" data-placement="right" data-container="body">
+            <img src="assets/img/avatar-mdo.png" alt="" class="img-circle img-responsive">
+            <small class="iconav-nav-label visible-xs-block">Account</small>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+	<div class="container">
+
+	<%= yield %>
+	
+	</div>
+</div>
+
+
+<!--     <script src="assets/javascripts/jquery.min.js"></script>
+    <script src="assets/javascripts/chart.js"></script>
+    <script src="assets/javascripts/tablesorter.min.js"></script>
+    <script src="assets/javascripts/toolkit.js"></script>
+    <script src="assets/javascripts/app.js"></script>
+    <script src="assets/javascripts/umd/tab.js"></script> -->
+    <!-- 
+        You need to include this script tag on any page that has a Google Map.
+
+        The following script tag will work when opening this example locally on your computer.
+        But if you use this on a localhost server or a live website you will need to include an API key. 
+        Sign up for one here (it's free for small usage): 
+            https://developers.google.com/maps/documentation/javascript/tutorial#api_key
+
+        After you sign up, use the following script tag with YOUR_GOOGLE_API_KEY replaced with your actual key.
+            <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_API_KEY&sensor=false"></script>
+    -->
+   <!--  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> -->
+    <!-- <script src="assets/javascripts/script.js"></script> -->
+
+    <script>
+      // execute/clear BS loaders for docs
+      $(function(){while(window.BS&&window.BS.loader&&window.BS.loader.length){(window.BS.loader.pop())()}})
+    </script>
+  </body>
 </html>

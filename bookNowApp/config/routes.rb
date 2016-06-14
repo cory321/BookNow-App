@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'couples#index'
-  get 'couples/:id', to: 'couples#show', as: :couple
+  # get 'couples/:id', to: 'couples#show', as: :couple
+
+  resources :couples
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

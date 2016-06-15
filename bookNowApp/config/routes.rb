@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
-  get 'assistants/index'
 
-  get 'assistants/show'
 
   root 'couples#index'
   # get 'couples/:id', to: 'couples#show', as: :couple
 
   resources :couples
   resources :assistants
+  resources :packages
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

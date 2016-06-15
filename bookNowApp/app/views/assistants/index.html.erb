@@ -10,11 +10,13 @@
 		<div class="thumbnail">
 		  <!-- <img class="card-img-top" data-src="..." alt="Card image cap"> -->
 		  <div class="card-block">
-		    <h4 class="card-title"><%= assistant.first_name %> <%= assistant.last_name %></h4>
+		    <h4 class="card-title"><span class="icon icon-user"> <%= assistant.first_name %> <%= assistant.last_name %></h4>
 		    <p class="card-text">
-			    <%= assistant.phone %>
+			    <span class="icon icon-phone"> <%= assistant.phone %></span>
 				<br>
-				<%= assistant.email %>
+				<span class="icon icon-email"> <%= assistant.email %></span>
+				<br>
+				<span class="icon icon-location-pin"> <%= assistant.city %></span>
 			</p>
 		    <a href="#" class="btn btn-sm btn-primary-outline">View</a>
 		  </div>

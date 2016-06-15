@@ -48,14 +48,14 @@
             <small class="iconav-nav-label">Calendar</small>
           </a>
         </li>
-        <li class="active">
+        <li class="<%= 'active' if params[:controller] == 'couples' %>">
           <a href="<%= couples_path %>" title="Couples" data-toggle="tooltip" data-placement="right" data-container="body">
             <span class="icon icon-heart"></span>
             <small class="iconav-nav-label">Couples</small>
           </a>
         </li>
-        <li >
-          <a href="#" title="Assistants" data-toggle="tooltip" data-placement="right" data-container="body">
+        <li class="<%= 'active' if params[:controller] == 'assistants' %>">
+          <a href="<%= assistants_path %>" title="Assistants" data-toggle="tooltip" data-placement="right" data-container="body">
             <span class="icon icon-man"></span>
             <small class="iconav-nav-label">Assistants</small>
           </a>

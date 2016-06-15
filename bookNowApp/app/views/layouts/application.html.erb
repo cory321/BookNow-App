@@ -66,8 +66,8 @@
             <small class="iconav-nav-label">Finances</small>
           </a>
         </li>
-        <li >
-          <a href="#" title="Packages" data-toggle="tooltip" data-placement="right" data-container="body">
+        <li class="<%= 'active' if params[:controller] == 'packages' %>">
+          <a href="<%= packages_path %>" title="Packages" data-toggle="tooltip" data-placement="right" data-container="body">
             <span class="icon icon-documents"></span>
             <small class="iconav-nav-label">Packages</small>
           </a>

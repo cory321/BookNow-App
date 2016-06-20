@@ -1,0 +1,28 @@
+<h2>Add New Assistant</h2>
+
+<div class="row">
+	<div class="col-lg-6">
+		<%= form_for( @assistant, html:{class:"class", role:"form"}) do |f| %>
+		<fieldset class="form-group">
+			<%= f.text_field :first_name, class:"form-control", placeholder:"First Name", :required => true %>
+		</fieldset>
+		<fieldset class="form-group">
+			<%= f.text_field :last_name, class:"form-control", placeholder:"Last Name", :required => true %>
+		</fieldset>
+		<fieldset class="form-group">
+			<%= f.text_field :phone, class:"form-control", placeholder:"Phone"  %>
+		</fieldset>
+		<fieldset class="form-group">
+			<%= f.text_field :email, class:"form-control", placeholder:"E-mail"  %>
+		</fieldset>	
+		<fieldset class="form-group">
+			<%= f.text_field :city, class:"form-control", placeholder:"City"  %>
+		</fieldset>	
+		<fieldset class="form-group">
+			<%= f.text_field :avatar, class:"form-control", placeholder:"Avatar URL"  %>
+		</fieldset>	
+			<%= f.submit "Add Assistant", class:"btn btn-primary" %>
+			<%= link_to "< Go Back", assistants_path, class:"p-l" %>
+		<% end %>
+	</div>
+</div>

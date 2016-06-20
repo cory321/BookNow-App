@@ -1,0 +1,28 @@
+h1
+  | Assistants
+hr.m-t-0.m-b-md
+
+.row.p-b
+  .col-md-12
+    =link_to "Add New Assistant", new_assistant_path, class: "btn btn-primary"
+
+- @assistants.in_groups_of(3, false).each do |group|
+  .row
+    - group.each do |assistant|
+      .col-md-4
+        .thumbnail
+          .card-block
+            h4.card-title
+              span.icon.icon-user.p-r-5
+                =' assistant.first_name
+                = assistant.last_name
+            p.card-text
+              span.icon.icon-phone
+                = assistant.phone
+              br
+              span.icon.icon-email
+                = assistant.email
+              br
+              span.icon.icon-location-pin
+                = assistant.city
+            =link_to "View", assistant_path(assistant), class:"btn btn-sm btn-primary-outline"

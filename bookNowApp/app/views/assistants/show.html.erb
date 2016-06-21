@@ -1,5 +1,6 @@
 <h2><%= @assistant.first_name %> <%= @assistant.last_name %></h2>
 
 <p>
-	<%= link_to "< Go Back", assistants_path %>
+	<%= link_to "< Go Back", assistants_path %><br>
+	<%= image_tag @assistant.avatar.url %>
 </p>

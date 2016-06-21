@@ -19,8 +19,8 @@
 			<%= f.text_field :city, class:"form-control", placeholder:"City"  %>
 		</fieldset>	
 		<fieldset class="form-group">
-			<%= f.text_field :avatar, class:"form-control", placeholder:"Avatar URL"  %>
-		</fieldset>	
+			<%= f.file_field :avatar, class:"form-control", placeholder:"Avatar URL"  %>
+		</fieldset>
 			<%= f.submit "Add Assistant", class:"btn btn-primary" %>
 			<%= link_to "< Go Back", assistants_path, class:"p-l" %>
 		<% end %>

@@ -23,7 +23,9 @@
 //= require fullcalendar
 
 $(function() {
-	$('#calendar').fullCalendar({});
+	$('#calendar').fullCalendar({
+		 events: '/events.json'
+	});
 	
 	$(".clickable-row").click(function() {
 	    Turbolinks.visit($(this).data("url"));

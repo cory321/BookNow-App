@@ -19,9 +19,14 @@
 //= require toolkit
 //= require umd/tab
 //= require tablesorter.min
+//= require moment 
+//= require fullcalendar
 
-$(document).ready(function($) {
-    $(".clickable-row").click(function() {
-        window.document.location = $(this).data("url");
-    });
+$(function() {
+	$('#calendar').fullCalendar({});
+	
+	$(".clickable-row").click(function() {
+	    Turbolinks.visit($(this).data("url"));
+	    // window.document.location = $(this).data("url");
+	});
 });

@@ -42,8 +42,8 @@
             <small class="iconav-nav-label">Overview</small>
           </a>
         </li>
-        <li>
-          <a href="#" title="Calendar" data-toggle="tooltip" data-placement="right" data-container="body">
+        <li class="<%= 'active' if params[:controller] == 'events' %>">
+          <a href="<%= events_path %>" title="Calendar" data-toggle="tooltip" data-placement="right" data-container="body">
             <span class="icon icon-calendar hi-icon"></span>
             <small class="iconav-nav-label">Calendar</small>
           </a>

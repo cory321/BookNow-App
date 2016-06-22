@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :events
   root 'couples#index'
   # get 'couples/:id', to: 'couples#show', as: :couple
 

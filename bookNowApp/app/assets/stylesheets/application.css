@@ -12,10 +12,10 @@
  *
  *= require bootstrap.min
  *= require toolkit-inverse
+ *= require fullcalendar
  *= require app
  *= require_tree .
  *= require_self
- *= require fullcalendar
  */
 
  @font-face {

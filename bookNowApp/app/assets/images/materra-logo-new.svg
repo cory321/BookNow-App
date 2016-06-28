@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#SVGID_1_);}
+	.st1{fill:#0F1013;}
+	.st2{fill:#D3DDE4;}
+</style>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-3.4473" y1="124.9596" x2="464.7235" y2="124.9596" gradientTransform="matrix(0.6986 -0.7156 -0.7156 -0.6986 181.4973 505.1414)">
+	<stop  offset="0" style="stop-color:#EC864E"/>
+	<stop  offset="0.5123" style="stop-color:#AC5FCA"/>
+	<stop  offset="1" style="stop-color:#2F85AF"/>
+</linearGradient>
+<circle class="st0" cx="253.2" cy="252.8" r="234.1"/>
+<g>
+	<path class="st1" d="M420.7,416.4"/>
+</g>
+<circle class="st1" cx="253.2" cy="252.8" r="149.7"/>
+<rect x="310.2" y="169.8" class="st2" width="33.4" height="164.4"/>
+<rect x="164.5" y="169.8" class="st2" width="33.4" height="164.4"/>
+<polygon class="st2" points="296.9,169.8 270.6,169.8 256.1,262 243,169.8 215.3,169.8 215.3,294.2 297,294.2 "/>
+</svg>

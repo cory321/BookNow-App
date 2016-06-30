@@ -1,4 +1,7 @@
 class EventsController < ApplicationController
+  
+  before_action :confirm_logged_in
+  
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   # GET /events

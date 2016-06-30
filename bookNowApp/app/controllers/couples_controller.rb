@@ -1,4 +1,7 @@
 class CouplesController < ApplicationController
+
+  before_action :confirm_logged_in
+  
   def index
   	@couples = Couple.all
   	render :index

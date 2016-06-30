@@ -1,15 +1,24 @@
 Rails.application.routes.draw do
 
-  root 'overview#index'
+  root 'sessions#index'
+
+  get '/login', to: "sessions#login", as: 'login'
+  get '/signup', to: "sessions#signup", as: 'signup'
+  post '/login', to: "sessions#attempt_login"
+  post '/signup', to: "sessions#create"
+  get '/home', to: "sessions#index", as: 'home'
+  delete '/logout', to: "sessions#logout", as: "logout"
 
   get 'overview' => 'overview#index'
   get 'finances' => 'finances#index'
   get 'settings' => 'settings#index'
+  get 'users' => 'users#index'
 
   resources :events
   resources :couples
   resources :assistants
   resources :packages
+  resources :users
 
   # get 'couples/:id', to: 'couples#show', as: :couple
 

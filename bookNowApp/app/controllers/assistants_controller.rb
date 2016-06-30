@@ -1,4 +1,7 @@
 class AssistantsController < ApplicationController
+
+	before_action :confirm_logged_in
+
 	def index
 		@assistants = Assistant.all
 		render :index

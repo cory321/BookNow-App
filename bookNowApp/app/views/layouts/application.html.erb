@@ -36,8 +36,8 @@
     </a>
     <div class="iconav-slider">
       <ul class="nav nav-pills iconav-nav hi-icon-effect-9 hi-icon-effect-9b">
-        <li>
-          <a href="#" title="Overview" data-toggle="tooltip" data-placement="right" data-container="body">
+        <li class="<%= 'active' if params[:controller] == 'overview' %>">
+          <a href="<%= overview_path %>" title="Overview" data-toggle="tooltip" data-placement="right" data-container="body">
             <span class="icon icon-home hi-icon"></span>
             <small class="iconav-nav-label">Overview</small>
           </a>
@@ -60,8 +60,8 @@
             <small class="iconav-nav-label">Assistants</small>
           </a>
         </li>
-        <li >
-          <a href="#" title="Finances" data-toggle="tooltip" data-placement="right" data-container="body">
+        <li class="<%= 'active' if params[:controller] == 'finances' %>">
+          <a href="<%= finances_path %>" title="Finances" data-toggle="tooltip" data-placement="right" data-container="body">
             <span class="icon icon-credit hi-icon"></span>
             <small class="iconav-nav-label">Finances</small>
           </a>
@@ -72,8 +72,8 @@
             <small class="iconav-nav-label">Packages</small>
           </a>
         </li>
-        <li >
-          <a href="#"" title="Settings" data-toggle="tooltip" data-placement="right" data-container="body">
+        <li class="<%= 'active' if params[:controller] == 'settings' %>">
+          <a href="<%= settings_path %>" title="Settings" data-toggle="tooltip" data-placement="right" data-container="body">
             <span class="icon icon-cog hi-icon"></span>
             <small class="iconav-nav-label">Settings</small>
           </a>

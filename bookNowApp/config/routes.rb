@@ -1,13 +1,18 @@
 Rails.application.routes.draw do
 
+  root 'overview#index'
+
+  get 'overview' => 'overview#index'
+  get 'finances' => 'finances#index'
+  get 'settings' => 'settings#index'
 
   resources :events
-  root 'couples#index'
-  # get 'couples/:id', to: 'couples#show', as: :couple
-
   resources :couples
   resources :assistants
   resources :packages
+
+  # get 'couples/:id', to: 'couples#show', as: :couple
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

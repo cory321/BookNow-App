@@ -1,0 +1,92 @@
+<h2>Add New Wedding Couple</h2>
+
+<%= form_for( @couple, html:{class:"class", role:"form"}) do |f| %>
+		
+		<div class="row">
+			<div class="col-md-12">
+				<h4>Wedding Date</h4>
+
+				<fieldset class="form-group">
+					<%= f.date_select :wedding_date, class:"form-control", placeholder:"Groom's First Name", :required => true %>
+				</fieldset>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-6">
+
+			<h4>Groom</h4>
+			
+			<fieldset class="form-group">
+				<%= f.text_field :groom_first_name, class:"form-control", placeholder:"Groom's First Name", :required => true %>
+			</fieldset>
+			<fieldset class="form-group">
+				<%= f.text_field :groom_last_name, class:"form-control", placeholder:"Groom's Last Name", :required => true %>
+			</fieldset>
+			<fieldset class="form-group">
+				<%= f.text_field :groom_phone, class:"form-control", placeholder:"Groom's Phone" %>
+			</fieldset>
+			<fieldset class="form-group">
+				<%= f.text_field :groom_email, class:"form-control", placeholder:"Groom's Email" %>
+			</fieldset>
+
+
+			<h4>Wedding Coordinator</h4>
+
+
+			<fieldset class="form-group">
+				<%= f.text_field :planner_first_name, class:"form-control", placeholder:"Planner's First Name" %>
+			</fieldset>
+			<fieldset class="form-group">
+				<%= f.text_field :planner_last_name, class:"form-control", placeholder:"Planner's Last Name" %>
+			</fieldset>
+			<fieldset class="form-group">
+				<%= f.text_field :planner_phone, class:"form-control", placeholder:"Planner's Phone" %>
+			</fieldset>
+			<fieldset class="form-group">
+				<%= f.text_field :planner_email, class:"form-control", placeholder:"Planner's Email" %>
+			</fieldset>
+		</div>
+		<div class="col-md-6">
+				<h4>Bride</h4>
+
+				<fieldset class="form-group">
+					<%= f.text_field :bride_first_name, class:"form-control", placeholder:"Bride's First Name", :required => true %>
+				</fieldset>
+				<fieldset class="form-group">
+					<%= f.text_field :bride_last_name, class:"form-control", placeholder:"Bride's Last Name", :required => true %>
+				</fieldset>
+				<fieldset class="form-group">
+					<%= f.text_field :bride_phone, class:"form-control", placeholder:"Bride's Phone" %>
+				</fieldset>
+				<fieldset class="form-group">
+					<%= f.text_field :bride_email, class:"form-control", placeholder:"Bride's Email" %>
+				</fieldset>
+
+				<h4>Locations</h4>
+
+				<fieldset class="form-group">
+					<%= f.text_field :groom_location_gr, class:"form-control", placeholder:"What Address is the Groom Getting Ready?" %>
+				</fieldset>
+				<fieldset class="form-group">
+					<%= f.text_field :bride_location_gr, class:"form-control", placeholder:"What Address is the Bride Getting Ready?" %>
+				</fieldset>
+				<fieldset class="form-group">
+					<%= f.text_field :ceremony_address, class:"form-control", placeholder:"Ceremony Address" %>
+				</fieldset>
+				<fieldset class="form-group">
+					<%= f.text_field :reception_address, class:"form-control", placeholder:"Reception Address" %>
+				</fieldset>
+				<fieldset class="form-group">
+					<%= f.text_field :marital_address, class:"form-control", placeholder:"Where Should We Ship Your Movie Package?" %>
+				</fieldset>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<%= f.submit "Add Couple", class:"btn btn-primary" %>
+			<%= link_to "< Go Back", couples_path, class:"p-l" %>
+		</div>
+	</div>
+
+<% end %>

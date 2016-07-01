@@ -6,7 +6,7 @@ hr.m-t-0.m-b-md
 
 .row.p-b
   .col-md-12
-    =link_to "Add New Assistant", new_assistant_path, class: "btn btn-primary"
+    =link_to "Add New Assistant", new_user_assistant_path(current_user), class: "btn btn-primary"
 
 - @assistants.in_groups_of(3, false).each do |group|
   .row

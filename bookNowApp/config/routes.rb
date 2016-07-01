@@ -14,11 +14,12 @@ Rails.application.routes.draw do
   get 'settings' => 'settings#index'
   get 'users' => 'users#index'
 
-  resources :events
-  resources :couples
-  resources :assistants
-  resources :packages
-  resources :users
+  resources :users do
+    resources :events, shallow: true
+    resources :couples, shallow: true
+    resources :assistants, shallow: true
+    resources :packages, shallow: true
+  end
 
   # get 'couples/:id', to: 'couples#show', as: :couple
 

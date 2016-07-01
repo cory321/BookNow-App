@@ -44,19 +44,19 @@
           </a>
         </li>
         <li class="<%= 'active' if params[:controller] == 'events' %>">
-          <a href="<%= events_path %>" title="Calendar" data-toggle="tooltip" data-placement="right" data-container="body">
+          <a href="<%= user_events_path(current_user) %>" title="Calendar" data-toggle="tooltip" data-placement="right" data-container="body">
             <span class="icon icon-calendar hi-icon"></span>
             <small class="iconav-nav-label">Calendar</small>
           </a>
         </li>
         <li class="<%= 'active' if params[:controller] == 'couples' %>">
-          <a href="<%= couples_path %>" title="Couples" data-toggle="tooltip" data-placement="right" data-container="body">
+          <a href="<%= user_couples_path(current_user) %>" title="Couples" data-toggle="tooltip" data-placement="right" data-container="body">
             <span class="icon icon-heart hi-icon"></span>
             <small class="iconav-nav-label">Couples</small>
           </a>
         </li>
         <li class="<%= 'active' if params[:controller] == 'assistants' %>">
-          <a href="<%= assistants_path %>" title="Assistants" data-toggle="tooltip" data-placement="right" data-container="body">
+          <a href="<%= user_assistants_path(current_user) %>" title="Assistants" data-toggle="tooltip" data-placement="right" data-container="body">
             <span class="icon icon-man hi-icon"></span>
             <small class="iconav-nav-label">Assistants</small>
           </a>
@@ -68,7 +68,7 @@
           </a>
         </li>
         <li class="<%= 'active' if params[:controller] == 'packages' %>">
-          <a href="<%= packages_path %>" title="Packages" data-toggle="tooltip" data-placement="right" data-container="body">
+          <a href="<%= user_packages_path(current_user) %>" title="Packages" data-toggle="tooltip" data-placement="right" data-container="body">
             <span class="icon icon-documents hi-icon"></span>
             <small class="iconav-nav-label">Packages</small>
           </a>

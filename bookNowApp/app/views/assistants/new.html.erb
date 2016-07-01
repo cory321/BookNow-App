@@ -22,7 +22,7 @@
 			<%= f.file_field :avatar, class:"form-control", placeholder:"Avatar URL"  %>
 		</fieldset>
 			<%= f.submit "Add Assistant", class:"btn btn-primary" %>
-			<%= link_to "< Go Back", assistants_path, class:"p-l" %>
+			<%= link_to "< Go Back", user_assistants_path(current_user), class:"p-l" %>
 		<% end %>
 	</div>
 </div>

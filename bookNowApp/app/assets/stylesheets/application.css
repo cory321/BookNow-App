@@ -26,9 +26,15 @@
    font-style: normal;
  }
  @media (min-width: 768px) {
+
+  body {
+    padding-top:0;
+  }
+
  	.iconav {
  		width:auto;
  	}
+
  }
 
  .font-lg {

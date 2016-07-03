@@ -50,6 +50,7 @@ class SessionsController < ApplicationController
     params.require(:user).permit(
       :username,
       :password,
+      :company_name,
       :avatar_url
     )
   end

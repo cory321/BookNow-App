@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160703082033) do
+ActiveRecord::Schema.define(version: 20160706040218) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,9 +78,13 @@ ActiveRecord::Schema.define(version: 20160703082033) do
     t.string   "username"
     t.string   "password"
     t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.string   "company_name"
+    t.string   "stripe_publishable_key"
+    t.string   "stripe_user_id"
+    t.string   "stripe_refresh_token"
+    t.string   "stripe_access_token"
   end
 
   add_foreign_key "couples", "events"

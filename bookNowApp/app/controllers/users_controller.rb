@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   # end
 
   def index
-    @users = Users.all
+    redirect_to root_path
   end
 
   def show

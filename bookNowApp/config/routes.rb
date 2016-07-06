@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root 'sessions#index'
 
+  get '/confirm', to: 'billing#confirm'
+
   get '/login', to: "sessions#login", as: 'login'
   get '/signup', to: "sessions#signup", as: 'signup'
   post '/login', to: "sessions#attempt_login"
@@ -19,7 +21,11 @@ Rails.application.routes.draw do
     resources :couples, shallow: true
     resources :assistants, shallow: true
     resources :packages, shallow: true
+    get 'billing', to: "billing#index", as: "billing"
   end
+
+  resources :charges
+
 
   # get 'couples/:id', to: 'couples#show', as: :couple
 

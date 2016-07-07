@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   root 'sessions#index'
 
-  get '/confirm', to: 'billing#confirm'
+  get '/stripe', to: "stripe#index", as: 'stripe'
+  get '/stripe/authorize', to: "stripe#authorize"
+  get '/stripe/oauth/callback', to: "stripe#oauth_callback"
 
   get '/login', to: "sessions#login", as: 'login'
   get '/signup', to: "sessions#signup", as: 'signup'
@@ -21,9 +23,9 @@ Rails.application.routes.draw do
     resources :couples, shallow: true
     resources :assistants, shallow: true
     resources :packages, shallow: true
-    get 'billing', to: "billing#index", as: "billing"
   end
 
+  # get 'users/auth/:provider/callback', to: "billing#callback"
   resources :charges
 
 

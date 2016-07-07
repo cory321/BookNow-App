@@ -28,6 +28,9 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use Stripe
 gem 'stripe'
+gem 'therubyracer'
+
+gem 'oauth2'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

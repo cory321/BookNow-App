@@ -3,19 +3,21 @@ class StripeController < ApplicationController
 
 	def index
 
+	# Should we Display a Stripe Connect Button?
+	current_user.stripe_user_id.nil? ? @stripe_connect = true : @stripe_connect = false
+
 	end
 
 	def authorize
+	#pre-fill user's info (optional except for scope)
 		params = {
-		     :scope => 'read_write'
-		     #pre-fill user's info (optional)
-		     # 'stripe_user[email]' => current_user.email,
-		     # 'stripe_user[url]' => current_user.website,
-		     # 'stripe_user[first_name]' => current_user.first_name,
-		     # 'stripe_user[last_name]' => current_user.last_name
+		     :scope => 'read_write',
+		     'stripe_user[email]' => current_user.email,
+		     'stripe_user[url]' => current_user.website || "",
+		     'stripe_user[business_name]' => current_user.company_name,
+		     'stripe_user[first_name]' => current_user.first_name,
+		     'stripe_user[last_name]' => current_user.last_name
 		   }
-
-
 
     # Redirect the user to the authorize_uri endpoint
     redirect_to client.auth_code.authorize_url(params)
@@ -43,6 +45,7 @@ class StripeController < ApplicationController
 		  @access_token = @response.token
 
 			current_user.update(stripe_publishable_key: @response.params["stripe_publishable_key"], stripe_user_id: @response.params["stripe_user_id"], stripe_refresh_token: @refresh_token, stripe_access_token: @access_token)
+		  
 		  if current_user.save
 		    redirect_to stripe_path, flash: {success: "Yes it worked!"}
 		  else

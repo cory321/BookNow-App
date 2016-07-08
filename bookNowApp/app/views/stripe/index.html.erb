@@ -1,3 +1,8 @@
-Stripe View
 
-<%= link_to "Connect to Stripe", stripe_authorize_path %>
+<% if @stripe_connect %>
+	<%= link_to stripe_authorize_path, class: "stripe-connect dark" do %>
+	<span>Connect to Stripe</span>
+	<% end %>
+<% else %>
+	You are successfully connected to Stripe
+<% end %>

@@ -1,8 +1,11 @@
 
-<% if @stripe_connect %>
-	<%= link_to stripe_authorize_path, class: "stripe-connect dark" do %>
-	<span>Connect to Stripe</span>
-	<% end %>
+<% if @not_stripe_connected %>
+	<h2>Accept Payments From Your Wedding Couples</h2>
+	<p>In order to begin accepting payments, you must connect to stripe <br>
+		<%= link_to stripe_authorize_path, class: "stripe-connect dark" do %>
+		<span>Connect to Stripe</span>
+		<% end %>
+	</p>
 <% else %>
 	You are successfully connected to Stripe
 <% end %>

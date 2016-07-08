@@ -1,2 +1,15 @@
-h1 Finances#index
+h1 Finances
 p Find me in app/views/finances/index.html.slim
+
+- if @not_stripe_connected
+  h2
+    | Accept Payments From Your Wedding Couples
+  p
+    | In order to begin accepting payments, you must connect to stripe 
+    br
+    = link_to stripe_authorize_path, class: "stripe-connect dark" do
+      span
+        | Connect to Stripe
+- else
+  |  You are successfully connected to Stripe 
+

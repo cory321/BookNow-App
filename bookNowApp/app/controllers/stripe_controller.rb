@@ -3,12 +3,13 @@ class StripeController < ApplicationController
 
 	def index
 
-	# Should we Display a Stripe Connect Button?
-	current_user.stripe_user_id.nil? ? @stripe_connect = true : @stripe_connect = false
+	# Should We Display a Stripe Connect Button?
+	current_user.stripe_user_id.nil? ? @not_stripe_connected = true : @not_stripe_connected = false
 
 	end
 
 	def authorize
+
 	#pre-fill user's info (optional except for scope)
 		params = {
 		     :scope => 'read_write',

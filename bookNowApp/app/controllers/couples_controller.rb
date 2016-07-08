@@ -37,6 +37,8 @@ class CouplesController < ApplicationController
   end
 
   def ensure_correct_user_for_couple
+
+    ## FIX THIS LOGIC
     couple = Couple.find params[:id]
     unless couple.user.id == session[:user_id]
       redirect_to user_couples_path(current_user), alert: "Not authorized"

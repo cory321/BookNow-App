@@ -4,7 +4,7 @@ class StripeController < ApplicationController
 	def index
 
 	# Should We Display a Stripe Connect Button?
-	current_user.stripe_user_id.nil? ? @not_stripe_connected = true : @not_stripe_connected = false
+	current_user.stripe_user_id.nil? ? @stripe_connected = false : @stripe_connected = true
 
 	end
 
@@ -31,7 +31,7 @@ class StripeController < ApplicationController
 			@error_type = params[:error]
 			@error_description = params[:error_description]
 
-			render :index
+			redirect_to stripe_path, flash: {alert: @error_type + " - " + @error_description}
 			
 		else
 
@@ -48,9 +48,9 @@ class StripeController < ApplicationController
 			current_user.update(stripe_publishable_key: @response.params["stripe_publishable_key"], stripe_user_id: @response.params["stripe_user_id"], stripe_refresh_token: @refresh_token, stripe_access_token: @access_token)
 		  
 		  if current_user.save
-		    redirect_to stripe_path, flash: {success: "Yes it worked!"}
+		    redirect_to stripe_path, flash: {success: "You Are Now Successfully Connected With Stripe!"}
 		  else
-		    redirect_to stripe_path, flash: {error: "It Failed"}
+		    redirect_to stripe_path, flash: {alert: "Stripe Connection Failed"}
 		  end
 
 		  # @response.params["stripe_user_id"]

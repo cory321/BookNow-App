@@ -1,4 +1,4 @@
 class Event < ActiveRecord::Base
 	belongs_to :user
-	has_one :couple
+	belongs_to :couple
 end

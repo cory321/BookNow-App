@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160708041848) do
+ActiveRecord::Schema.define(version: 20160709223918) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,10 @@ ActiveRecord::Schema.define(version: 20160708041848) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "city"
+    t.integer  "user_id"
   end
+
+  add_index "assistants", ["user_id"], name: "index_assistants_on_user_id", using: :btree
 
   create_table "couples", force: :cascade do |t|
     t.date     "wedding_date"
@@ -49,10 +52,8 @@ ActiveRecord::Schema.define(version: 20160708041848) do
     t.string   "reception_address"
     t.string   "marital_address"
     t.integer  "user_id"
-    t.integer  "event_id"
   end
 
-  add_index "couples", ["event_id"], name: "index_couples_on_event_id", using: :btree
   add_index "couples", ["user_id"], name: "index_couples_on_user_id", using: :btree
 
   create_table "events", force: :cascade do |t|
@@ -64,8 +65,11 @@ ActiveRecord::Schema.define(version: 20160708041848) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "user_id"
+    t.integer  "couple_id"
+    t.string   "event_type"
   end
 
+  add_index "events", ["couple_id"], name: "index_events_on_couple_id", using: :btree
   add_index "events", ["user_id"], name: "index_events_on_user_id", using: :btree
 
   create_table "packages", force: :cascade do |t|
@@ -90,7 +94,8 @@ ActiveRecord::Schema.define(version: 20160708041848) do
     t.string   "last_name"
   end
 
-  add_foreign_key "couples", "events"
+  add_foreign_key "assistants", "users"
   add_foreign_key "couples", "users"
+  add_foreign_key "events", "couples"
   add_foreign_key "events", "users"
 end

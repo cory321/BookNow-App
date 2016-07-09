@@ -23,7 +23,6 @@ class HooksController < ApplicationController
 
 			if data["type"] = "account.application.deauthorized"
 				@deauthorized_stripe_users = User.where(stripe_user_id: data["user_id"]).update_all(stripe_params)	
-				binding.pry
 			end
 
 			render status: 200
@@ -35,3 +34,5 @@ class HooksController < ApplicationController
 		end
 	end
 end
+
+

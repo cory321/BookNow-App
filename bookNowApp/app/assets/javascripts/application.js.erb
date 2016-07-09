@@ -24,7 +24,7 @@
 
 $(function() {
 	$('#calendar').fullCalendar({
-		 events: '/events.json'
+		 events: '#{current_user.id}/events.json'
 	});
 	
 	$(".clickable-row").click(function() {

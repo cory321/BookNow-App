@@ -13,8 +13,19 @@ class CouplesController < ApplicationController
   end
 
   def create
-  	@couple = @user.couples.create couple_params
-  	if @couple.save
+
+    @couple = @user.couples.create couple_params
+    @event = Event.new
+    @event.title = couple_params["groom_first_name"] + " and " + couple_params["bride_first_name"]
+    @event.description = couple_params["ceremony_address"]
+    @event.start_time = couple_params["wedding_date(1i)"] + "-" + couple_params["wedding_date(2i)"] + "-" + couple_params["wedding_date(3i)"] + " 12:00:00"
+    @event.end_time = @event.start_time
+    @event.all_day = true
+    @event.user_id =  @couple.user.id
+    @event.couple_id = @couple.id
+    @event.event_type = "Wedding"
+
+  	if @couple.save && @event.save
   		redirect_to user_couples_path(@user), flash: {success: "#{@couple.groom_first_name} and #{@couple.bride_first_name} added!"}
   	else
   		render :new

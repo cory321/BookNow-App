@@ -21,14 +21,22 @@
 //= require tablesorter.min
 //= require moment 
 //= require fullcalendar
+//= require bootstrap-datepicker
 
-$(function() {
-	$('#calendar').fullCalendar({
-		 events: '#{current_user.id}/events.json'
-	});
+// $(function() {
+// 	$('#calendar').fullCalendar({
+// 		 events: '#{current_user.id}/events.json'
+// 	});
 	
-	$(".clickable-row").click(function() {
-	    Turbolinks.visit($(this).data("url"));
-	    // window.document.location = $(this).data("url");
-	});
+// 	$(".clickable-row").click(function() {
+// 	    Turbolinks.visit($(this).data("url"));
+// 	    // window.document.location = $(this).data("url");
+// 	});
+// });
+
+$(function(){
+
+	$('.datepicker').datepicker()
+
 });
+

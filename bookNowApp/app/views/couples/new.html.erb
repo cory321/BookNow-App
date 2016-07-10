@@ -3,11 +3,14 @@
 <%= form_for( [@user, @couple], html:{class:"class", role:"form"}) do |f| %>
 		
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-3">
 				<h4>Wedding Date</h4>
 
 				<fieldset class="form-group">
-					<%= f.date_select :wedding_date, class:"form-control", placeholder:"Groom's First Name", :required => true %>
+					<div class="input-append input-group date datepicker" data-date="<%= Time.now.strftime('%m/%d/%Y') %>" data-date-format="mm/dd/yyyy" data-date-viewmode="years">
+								<%= f.text_field :wedding_date, class:"span2 form-control", size:"16", value: Time.now.strftime('%m/%d/%Y'), :required => true, :readonly => true %>
+								<span class="input-group-addon add-on btn btn-primary"><i class="icon icon-calendar"></i></span>
+					</div>
 				</fieldset>
 			</div>
 		</div>

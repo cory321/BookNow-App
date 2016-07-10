@@ -13,6 +13,7 @@
  *= require bootstrap.min
  *= require toolkit-inverse
  *= require fullcalendar
+ *= require datepicker
  *= require app
  *= require_tree .
  *= require_self

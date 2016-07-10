@@ -14,12 +14,17 @@ class CouplesController < ApplicationController
 
   def create
 
+    date = couple_params["wedding_date"]
+    new_date = date.split("/")
+    formatted_date = new_date[1] +"/"+ new_date[0] +"/"+ new_date[2]
+    post_date = DateTime.parse(formatted_date)
+
     @couple = @user.couples.create couple_params
     @event = Event.new
     @event.title = couple_params["groom_first_name"] + " and " + couple_params["bride_first_name"]
     @event.description = couple_params["ceremony_address"]
-    @event.start_time = couple_params["wedding_date(1i)"] + "-" + couple_params["wedding_date(2i)"] + "-" + couple_params["wedding_date(3i)"] + " 12:00:00"
-    @event.end_time = @event.start_time
+    @event.start_time = post_date
+    @event.end_time = post_date
     @event.all_day = true
     @event.user_id =  @couple.user.id
     @event.couple_id = @couple.id

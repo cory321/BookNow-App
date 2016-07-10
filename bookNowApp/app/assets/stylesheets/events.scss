@@ -2,6 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.datepicker table tr td span:hover {
+	background: #EEE;
+}
+
+fieldset .datepicker .btn {
+	opacity:1;
+}
 
 .fc th, .fc td {
 	border: 1px solid steelblue;

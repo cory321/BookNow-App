@@ -1,13 +1,12 @@
 class EventsController < ApplicationController
-  
+  before_action :set_user, only: [:index, :new, :create]
   before_action :confirm_logged_in
-  
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :ensure_correct_user_for_event, only: [:edit, :show, :update, :destroy]
 
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    @events = @user.events
   end
 
   # GET /events/1
@@ -66,12 +65,25 @@ class EventsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_event
-      @event = Event.find(params[:id])
+    
+    def set_user
+      @user = User.find params[:user_id]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
       params.require(:event).permit(:title, :description, :start_time, :end_time, :all_day)
+    end
+
+    def ensure_correct_user_for_assistant
+
+      ## FIX THIS LOGIC
+      assistant = Assistant.find params[:id]
+      unless couple.user.id == session[:user_id]
+        redirect_to user_assistants_path(current_user), alert: "Invalid Request"
+      end
+      # find which user made the team with params[:id]
+      # compare that user's id against current_user.id
+      # if they do not match up, redirect with a mean message
     end
 end

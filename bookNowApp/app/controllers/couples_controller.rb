@@ -15,22 +15,17 @@ class CouplesController < ApplicationController
 
   def create
 
-    @event = Event.new
+    @couple = @user.couples.create modified_couple_params
     
-    @event.title = couple_params[:groom_first_name] + " and " + couple_params[:groom_first_name]
-    @event.description = couple_params[:groom_first_name]
+    @event = Event.new
+    @event.title = couple_params[:groom_first_name] + " and " + couple_params[:bride_first_name]
+    @event.description = couple_params[:ceremony_address]
     @event.start_time = modified_couple_params[:wedding_date]
     @event.end_time = modified_couple_params[:wedding_date]
     @event.all_day = true
     @event.event_type = "Wedding"
-
-    @couple = @user.couples.create modified_couple_params
     @event.user_id =  @couple.user.id
     @event.couple_id = @couple.id
-
-    # @couple = @user.couples.create couple_params
-
-    binding.pry
 
   	if @couple.save && @event.save
   		redirect_to user_couples_path(@user), flash: {success: "#{@couple.groom_first_name} and #{@couple.bride_first_name} added!"}
@@ -50,7 +45,7 @@ class CouplesController < ApplicationController
     new_hash = couple_params
     date = couple_params[:wedding_date]
     new_date = date.split("/")
-    formatted_date = new_date[1] +"/"+ new_date[0] +"/"+ new_date[2]
+    formatted_date = new_date[1] +"/"+ new_date[0] +"/"+ new_date[2] + " 12:00:00"
     post_date = DateTime.parse(formatted_date)
     new_hash[:wedding_date] = post_date
     return new_hash

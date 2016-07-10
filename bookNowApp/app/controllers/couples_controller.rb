@@ -2,7 +2,8 @@ class CouplesController < ApplicationController
   before_action :set_user, only: [:index, :new, :create]
   before_action :confirm_logged_in
   before_action :ensure_correct_user_for_couple, only: [:edit, :show, :update, :destroy]
-  
+  before_filter :modified_couple_params, only: :create
+
   def index
   	@couples = @user.couples
   	render :index
@@ -14,21 +15,22 @@ class CouplesController < ApplicationController
 
   def create
 
-    date = couple_params["wedding_date"]
-    new_date = date.split("/")
-    formatted_date = new_date[1] +"/"+ new_date[0] +"/"+ new_date[2]
-    post_date = DateTime.parse(formatted_date)
-
-    @couple = @user.couples.create couple_params
     @event = Event.new
-    @event.title = couple_params["groom_first_name"] + " and " + couple_params["bride_first_name"]
-    @event.description = couple_params["ceremony_address"]
-    @event.start_time = post_date
-    @event.end_time = post_date
+    
+    @event.title = couple_params[:groom_first_name] + " and " + couple_params[:groom_first_name]
+    @event.description = couple_params[:groom_first_name]
+    @event.start_time = modified_couple_params[:wedding_date]
+    @event.end_time = modified_couple_params[:wedding_date]
     @event.all_day = true
+    @event.event_type = "Wedding"
+
+    @couple = @user.couples.create modified_couple_params
     @event.user_id =  @couple.user.id
     @event.couple_id = @couple.id
-    @event.event_type = "Wedding"
+
+    # @couple = @user.couples.create couple_params
+
+    binding.pry
 
   	if @couple.save && @event.save
   		redirect_to user_couples_path(@user), flash: {success: "#{@couple.groom_first_name} and #{@couple.bride_first_name} added!"}
@@ -43,6 +45,16 @@ class CouplesController < ApplicationController
   end
 
   private
+
+  def modified_couple_params
+    new_hash = couple_params
+    date = couple_params[:wedding_date]
+    new_date = date.split("/")
+    formatted_date = new_date[1] +"/"+ new_date[0] +"/"+ new_date[2]
+    post_date = DateTime.parse(formatted_date)
+    new_hash[:wedding_date] = post_date
+    return new_hash
+  end
 
 	def couple_params
 		params.require(:couple).permit(:wedding_date, :groom_first_name, :groom_last_name, :groom_phone, :groom_email, :bride_first_name, :bride_last_name, :bride_phone, :bride_email, :planner_first_name, :planner_last_name, :planner_phone, :planner_email, :groom_location_gr, :bride_location_gr, :ceremony_address, :reception_address, :marital_address)

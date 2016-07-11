@@ -32,6 +32,8 @@ gem 'therubyracer'
 gem 'ultrahook'
 gem 'oauth2'
 
+gem 'seed_dump'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

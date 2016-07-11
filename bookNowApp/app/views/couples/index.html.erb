@@ -12,37 +12,41 @@
     </div>
   </section>
 
-  <hr class="m-t-0 m-b-md">
+  <hr class="m-t-0 m-b">
+  <%= link_to "Add New Couple", new_user_couple_path(current_user), class:"p-l btn btn-primary-outline m-b-md" %>
 
-  <div class="table-responsive">
-      <table class="table" data-sort="table">
-        <thead>
-          <tr>
-            <th class="header">ID</th>
-            <th class="header">Wedding Date</th>
-            <th class="header headerSortUp">Groom</th>
-            <th class="header">Bride</th>
-            <th class="header">Location</th>
-            <th class="header">Package</th>
-            <th class="header">Status</th>
-          </tr>
-        </thead>
-        <tbody>
-        
-        <% @couples.each do |couple| %>
-            <tr class="clickable-row" data-url='<%= couple_path(couple)%>'>
-                <td><a href="#">#<%= couple.id %></a></td>
-                <td><%= couple.wedding_date %></td>
-                <td><%= couple.groom_first_name %> <%= couple.groom_last_name %></td>
-                <td><%= couple.bride_first_name %> <%= couple.bride_last_name %></td>
-                <td><%= couple.ceremony_address %></td>
-                <td>{package}</td>
-                <td class="status-upcoming">{status}</td>
+<% @years.each do |year_table| %>
+  <% if year_table.blank? == false %>
+    <div class="table-responsive">
+    <h3><%= year_table[0].wedding_date.year %></h3>
+        <table class="table" data-sort="table">
+          <thead>
+            <tr>
+              <th class="header">ID</th>
+              <th class="header headerSortDown">Wedding Date</th>
+              <th class="header">Groom</th>
+              <th class="header">Bride</th>
+              <th class="header">Location</th>
+              <th class="header">Package</th>
+              <th class="header">Status</th>
             </tr>
-        <% end %>
+          </thead>
+          <tbody>
+          
+          <% year_table.each do |couple| %>
+              <tr class="clickable-row" data-url='<%= couple_path(couple)%>'>
+                  <td><a href="#">#<%= couple.id %></a></td>
+                  <td><%= couple.wedding_date.strftime('%b %d, %Y') %></td>
+                  <td><%= couple.groom_first_name %> <%= couple.groom_last_name %></td>
+                  <td><%= couple.bride_first_name %> <%= couple.bride_last_name %></td>
+                  <td><%= couple.ceremony_address %></td>
+                  <td>{package}</td>
+                  <td class="status-upcoming">{status}</td>
+              </tr>
+          <% end %>
 
-        </tbody>
-      </table>
-
-      <%= link_to "Add New Couple", new_user_couple_path(current_user), class:"p-l btn btn-primary-outline" %>
-  </div>
+          </tbody>
+        </table>
+    </div>
+  <% end %>
+<% end %>

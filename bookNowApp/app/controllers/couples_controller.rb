@@ -5,7 +5,31 @@ class CouplesController < ApplicationController
   before_filter :modified_couple_params, only: :create
 
   def index
-  	@couples = @user.couples
+
+  	@couples = @user.couples.order('wedding_date DESC')
+
+    starting_year = @couples.first.wedding_date.year #2019
+    ending_year = @couples.last.wedding_date.year #2014
+    num_years = starting_year - ending_year #2
+    
+    years_array = [[]]
+    i = 0
+
+    until i > num_years
+
+    years_array.push []
+      @couples.each do |couple|
+        if couple.wedding_date.year == starting_year
+          years_array[i].push couple
+        end
+      end
+
+      i = i+1
+      starting_year = starting_year-1
+    end
+
+    @years = years_array
+
   	render :index
   end
 
@@ -43,11 +67,9 @@ class CouplesController < ApplicationController
 
   def modified_couple_params
     new_hash = couple_params
-    date = couple_params[:wedding_date]
-    new_date = date.split("/")
-    formatted_date = new_date[1] +"/"+ new_date[0] +"/"+ new_date[2] + " 12:00:00"
-    post_date = DateTime.parse(formatted_date)
-    new_hash[:wedding_date] = post_date
+    date = couple_params[:wedding_date] + " 12:00:00"
+    new_date = DateTime.strptime(date, '%m/%d/%Y %H:%M:%S')
+    new_hash[:wedding_date] = new_date
     return new_hash
   end
 
@@ -60,7 +82,6 @@ class CouplesController < ApplicationController
   end
 
   def ensure_correct_user_for_couple
-
     ## FIX THIS LOGIC
     couple = Couple.find params[:id]
     unless couple.user.id == session[:user_id]

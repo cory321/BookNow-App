@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160709223918) do
+ActiveRecord::Schema.define(version: 20160712003747) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,33 @@ ActiveRecord::Schema.define(version: 20160709223918) do
   add_index "events", ["couple_id"], name: "index_events_on_couple_id", using: :btree
   add_index "events", ["user_id"], name: "index_events_on_user_id", using: :btree
 
+  create_table "items", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "package_items", force: :cascade do |t|
+    t.integer  "package_id"
+    t.integer  "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "package_items", ["item_id"], name: "index_package_items_on_item_id", using: :btree
+  add_index "package_items", ["package_id"], name: "index_package_items_on_package_id", using: :btree
+
+  create_table "packages", force: :cascade do |t|
+    t.string   "name"
+    t.string   "price"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "packages", ["user_id"], name: "index_packages_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email"
     t.string   "password"
@@ -92,4 +119,7 @@ ActiveRecord::Schema.define(version: 20160709223918) do
   add_foreign_key "couples", "users"
   add_foreign_key "events", "couples"
   add_foreign_key "events", "users"
+  add_foreign_key "package_items", "items"
+  add_foreign_key "package_items", "packages"
+  add_foreign_key "packages", "users"
 end

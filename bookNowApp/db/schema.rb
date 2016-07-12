@@ -72,12 +72,6 @@ ActiveRecord::Schema.define(version: 20160709223918) do
   add_index "events", ["couple_id"], name: "index_events_on_couple_id", using: :btree
   add_index "events", ["user_id"], name: "index_events_on_user_id", using: :btree
 
-  create_table "packages", force: :cascade do |t|
-    t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "email"
     t.string   "password"

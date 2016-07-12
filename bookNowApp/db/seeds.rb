@@ -1,3 +1,7 @@
+User.create!([
+  {email: "cory@surrealweddingfilms.com", password: nil, password_digest: "$2a$10$dgfCdZIRYGEfOvurRHE/KuAAGWLVcLc.u.X0UeXgpUk3qBLoqvo22", company_name: "Surreal Wedding Films", stripe_publishable_key: nil, stripe_user_id: nil, stripe_refresh_token: nil, stripe_access_token: nil, website: nil, first_name: "Cory", last_name: "Williams"}
+])
+
 Couple.create!([
   {wedding_date: "2016-07-23", groom_first_name: "Michael", groom_last_name: "Dwyer", groom_email: "mdwyerjr@gmail.com", groom_phone: "", groom_location_gr: "", bride_first_name: "Christie", bride_last_name: "Richards", bride_email: "", bride_phone: "", bride_location_gr: "", planner_first_name: "", planner_last_name: "", planner_email: "", planner_phone: "", ceremony_address: "", reception_address: "", marital_address: "", user_id: 1},
   {wedding_date: "2016-10-08", groom_first_name: "Daniel", groom_last_name: "Gomez", groom_email: "", groom_phone: "(661) 431-9526", groom_location_gr: "Whispering Rose Ranch - Groom's Saloon", bride_first_name: "Hanah", bride_last_name: "Shaw", bride_email: "hanahshaw12@gmail.com", bride_phone: "(661) 342-8593", bride_location_gr: "Hotel Corque (Presidential Suite)", planner_first_name: "Vanessa", planner_last_name: "Vierra", planner_email: "", planner_phone: "", ceremony_address: "Whispering Rose Ranch", reception_address: "Whispering Rose Ranch", marital_address: "12351 Lene Place, Bakersfield, CA 93306", user_id: 1},
@@ -16,6 +20,7 @@ Couple.create!([
   {wedding_date: "2015-10-03", groom_first_name: "Justin", groom_last_name: "Pike", groom_email: "", groom_phone: "(240) 461-9317", groom_location_gr: "Hotel Corque, Solvang, CA", bride_first_name: "Corye", bride_last_name: "Goodman", bride_email: "corye.goodman@gmail.com", bride_phone: "(240) 461-9317", bride_location_gr: "Hotel Corque, Solvang, CA", planner_first_name: "TBD", planner_last_name: "", planner_email: "", planner_phone: "", ceremony_address: "Gainey Vineyard - Barn", reception_address: "Gainey Vineyard - Barn", marital_address: "2408 Penmar Avenue, Venice, CA 90291", user_id: 1},
   {wedding_date: "2015-09-26", groom_first_name: "Derek", groom_last_name: "Josephs", groom_email: "", groom_phone: "(914) 325-4971", groom_location_gr: "Rancho Valencia", bride_first_name: "Dani", bride_last_name: "Spear", bride_email: "cspear1@mac.com", bride_phone: "(917) 945-0498", bride_location_gr: "Rancho Santa Fe", planner_first_name: "Brooke", planner_last_name: "Keegan", planner_email: "", planner_phone: "", ceremony_address: "Rancho Valencia", reception_address: "Rancho Valencia", marital_address: "TBD", user_id: 1}
 ])
+
 Event.create!([
   {title: "Michael and Christie", description: "", start_time: "2016-07-23 12:00:00", end_time: "2016-07-23 12:00:00", all_day: true, user_id: 1, couple_id: 1, event_type: "Wedding"},
   {title: "Daniel and Hanah", description: "Whispering Rose Ranch", start_time: "2016-10-08 12:00:00", end_time: "2016-10-08 12:00:00", all_day: true, user_id: 1, couple_id: 2, event_type: "Wedding"},
@@ -33,7 +38,4 @@ Event.create!([
   {title: "Gabriel and Ashley", description: "Mission - San Luis Obispo, CA", start_time: "2014-12-20 12:00:00", end_time: "2014-12-20 12:00:00", all_day: true, user_id: 1, couple_id: 14, event_type: "Wedding"},
   {title: "Justin and Corye", description: "Gainey Vineyard - Barn", start_time: "2015-10-03 12:00:00", end_time: "2015-10-03 12:00:00", all_day: true, user_id: 1, couple_id: 15, event_type: "Wedding"},
   {title: "Derek and Dani", description: "Rancho Valencia", start_time: "2015-09-26 12:00:00", end_time: "2015-09-26 12:00:00", all_day: true, user_id: 1, couple_id: 16, event_type: "Wedding"}
-])
-User.create!([
-  {email: "cory@surrealweddingfilms.com", password: nil, password_digest: "$2a$10$dgfCdZIRYGEfOvurRHE/KuAAGWLVcLc.u.X0UeXgpUk3qBLoqvo22", company_name: "Surreal Wedding Films", stripe_publishable_key: nil, stripe_user_id: nil, stripe_refresh_token: nil, stripe_access_token: nil, website: nil, first_name: "Cory", last_name: "Williams"}
 ])

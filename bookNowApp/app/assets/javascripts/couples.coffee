@@ -8,5 +8,3 @@ $ ->
     # window.document.location = $(this).data("url");
     return
   return
-
-  $('.datepicker').datepicker()

@@ -13,15 +13,15 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
-//= require application
-//= require chart
-//= require toolkit
-//= require umd/tab
 //= require tablesorter.min
-//= require moment 
 //= require fullcalendar
 //= require bootstrap-datepicker
+//= require chart
+//= require application
+//= require toolkit
+//= require umd/tab
+//= require moment
+//= require_tree .
 
 // $(function() {
 // 	$('#calendar').fullCalendar({
@@ -34,9 +34,12 @@
 // 	});
 // });
 
-$(function(){
 
-	$('.datepicker').datepicker()
+// $('#calendar').fullCalendar({
+// 		 events: '#{current_user.id}/events.json'
+// });
 
-});
+$('.datepicker').datepicker();
+
+
 

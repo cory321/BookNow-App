@@ -5,7 +5,6 @@ class AssistantsController < ApplicationController
 
 	def index
 		@assistants = @user.assistants
-		render :index
 	end
 
 	def new
@@ -39,7 +38,7 @@ class AssistantsController < ApplicationController
 
 	  ## FIX THIS LOGIC
 	  assistant = Assistant.find params[:id]
-	  unless couple.user.id == session[:user_id]
+	  unless  assistant.user.id == session[:user_id]
 	    redirect_to user_assistants_path(current_user), alert: "Invalid Request"
 	  end
 	  # find which user made the team with params[:id]

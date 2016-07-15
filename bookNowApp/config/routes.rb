@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
   root 'sessions#index'
 
+  get '/welcome', to: "static_pages#welcome", as: "welcome"
+  get '/about', to: "static_pages#about", as: "about"
+  get '/contact', to: "static_pages#contact", as: "contact"
+
   get '/stripe', to: "stripe#index", as: 'stripe'
   get '/stripe/authorize', to: "stripe#authorize"
   get '/stripe/oauth/callback', to: "stripe#oauth_callback"

@@ -1,7 +1,7 @@
 class AssistantsController < ApplicationController
 	before_action :set_user, only: [:index, :new, :create]
 	before_action :confirm_logged_in
-	before_action :ensure_correct_user_for_assistant, only: [:edit, :show, :update, :destroy]
+	before_action :ensure_correct_user_for_assistant, only: [:edit, :show, :crop_avatar, :update, :destroy]
 
 	def index
 		@assistants = @user.assistants
@@ -14,10 +14,19 @@ class AssistantsController < ApplicationController
 	def create
 		@assistant = @user.assistants.create assistant_params
 		if @assistant.save
-			redirect_to user_assistants_path(@user), flash: {success: "Your assistant has been added"}
+			if assistant_params[:avatar]
+				redirect_to assistants_crop_avatar_path(@assistant)
+			else
+				redirect_to user_assistants_path(@user), flash: {success: "Your assistant has been added"}
+			end
 		else
-			render :new
+			render :new, flash: {alert: "An error occurred"}
 		end
+	end
+
+	def crop_avatar
+		@assistant = Assistant.find(params[:id])
+
 	end
 
 	def show

@@ -1,6 +1,5 @@
 class Assistant < ActiveRecord::Base
 	belongs_to :user
-	
 	mount_uploader :avatar, AvatarUploader
 	validate :image_size_validation
 

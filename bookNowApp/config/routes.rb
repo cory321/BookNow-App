@@ -30,6 +30,8 @@ Rails.application.routes.draw do
     resources :packages, shallow: true
   end
 
+  get 'assistants/:id/crop', to: 'assistants#crop_avatar', as: "assistants_crop_avatar"
+
   # get 'users/auth/:provider/callback', to: "billing#callback"
   resources :charges
 

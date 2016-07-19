@@ -14,6 +14,7 @@
  *= require toolkit-inverse
  *= require fullcalendar
  *= require datepicker
+ *= require jquery.Jcrop.min
  *= require app
  *= require_tree .
  *= require_self

@@ -2,15 +2,12 @@ class StripeController < ApplicationController
 	before_action :confirm_logged_in
 
 	def index
-
-	# Should We Display a Stripe Connect Button?
-	current_user.stripe_user_id.nil? ? @stripe_connected = false : @stripe_connected = true
-
+		# Should We Display a Stripe Connect Button?
+		current_user.stripe_user_id.nil? ? @stripe_connected = false : @stripe_connected = true
 	end
 
 	def authorize
-
-	#pre-fill user's info (optional except for scope)
+		#pre-fill user's info (optional except for scope)
 		params = {
 		     :scope => 'read_write',
 		     'stripe_user[email]' => current_user.email,
@@ -27,7 +24,6 @@ class StripeController < ApplicationController
 	def oauth_callback
 		
 		if(params[:error])
-
 			@error_type = params[:error]
 			@error_description = params[:error_description]
 
@@ -45,7 +41,14 @@ class StripeController < ApplicationController
 		  @refresh_token = @response.refresh_token
 		  @access_token = @response.token
 
-			current_user.update(stripe_publishable_key: @response.params["stripe_publishable_key"], stripe_user_id: @response.params["stripe_user_id"], stripe_refresh_token: @refresh_token, stripe_access_token: @access_token)
+		  stripe_options = {
+				stripe_publishable_key: @response.params["stripe_publishable_key"], 
+				stripe_user_id: @response.params["stripe_user_id"], 
+				stripe_refresh_token: @refresh_token, 
+				stripe_access_token: @access_token
+		  }
+
+			current_user.update(stripe_options)
 		  
 		  if current_user.save
 		    redirect_to stripe_path, flash: {success: "You Are Now Successfully Connected With Stripe!"}

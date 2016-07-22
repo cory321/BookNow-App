@@ -21,7 +21,16 @@
 				    <p class="card-text">
 				   	 Price: <%= package.price %>
 					</p>
-				    <a href="#" class="btn btn-sm btn-primary-outline">View</a>
+					
+					<% if package.items.any? %>
+					<ul>
+						<% package.items.each do |item| %>
+							<li><%= item.name %></li>
+						<% end %>
+					</ul>
+					<% end %>
+
+				    <a href="#" class="btn btn-sm btn-primary-outline">Edit</a>
 				  </div>
 				</div>
 			</div>

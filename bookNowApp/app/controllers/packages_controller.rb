@@ -9,7 +9,6 @@ class PackagesController < ApplicationController
 
 	def new
 		@package = @user.packages.new
-		@Item = Item.new
 	end
 
 	def create

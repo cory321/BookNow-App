@@ -8,28 +8,30 @@ class CouplesController < ApplicationController
 
   	@couples = @user.couples.order('wedding_date DESC')
 
-    starting_year = @couples.first.wedding_date.year #2019
-    ending_year = @couples.last.wedding_date.year #2014
-    num_years = starting_year - ending_year #2
-    
-    years_array = [[]]
-    i = 0
+    if @couples.any?
+      starting_year = @couples.first.wedding_date.year #2019
+      ending_year = @couples.last.wedding_date.year #2014
+      num_years = starting_year - ending_year #2
+      
+      years_array = [[]]
+      i = 0
 
-    until i > num_years
+      until i > num_years
 
-    years_array.push []
-      @couples.each do |couple|
-        if couple.wedding_date.year == starting_year
-          years_array[i].push couple
+      years_array.push []
+        @couples.each do |couple|
+          if couple.wedding_date.year == starting_year
+            years_array[i].push couple
+          end
         end
+
+        i = i+1
+        starting_year = starting_year-1
       end
 
-      i = i+1
-      starting_year = starting_year-1
+      @years = years_array
     end
-
-    @years = years_array
-
+    
   	render :index
   end
 

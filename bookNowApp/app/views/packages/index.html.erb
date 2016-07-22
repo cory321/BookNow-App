@@ -3,21 +3,32 @@
 <h1>Packages</h1>
 <hr class="m-t-0 m-b-md">
 
-Packages and Contracts
+<!-- Packages and Contracts -->
+<div class="row p-b">
+	<div class="col-md-12">
+		<%= link_to "Create A New Package", new_user_package_path %>
+	</div>
+</div>
 
 <div class="row">
-	
-	<div class="col-md-4">
-		<div class="thumbnail">
-		  <!-- <img class="card-img-top" data-src="..." alt="Card image cap"> -->
-		  <div class="card-block">
-		    <h4 class="card-title"><span class="icon icon-documents"> Package</h4>
-		    <p class="card-text">
-		   	 Info
-			</p>
-		    <a href="#" class="btn btn-sm btn-primary-outline">View</a>
-		  </div>
-		</div>
+	<% if @packages.any? %>
+		<% @packages.each do |package| %>
+			<div class="col-md-4">
+				<div class="thumbnail">
+				  <!-- <img class="card-img-top" data-src="..." alt="Card image cap"> -->
+				  <div class="card-block">
+				    <h4 class="card-title"><span class="icon icon-documents"><%= package.name %></h4>
+				    <p class="card-text">
+				   	 Price: <%= package.price %>
+					</p>
+				    <a href="#" class="btn btn-sm btn-primary-outline">View</a>
+				  </div>
+				</div>
+			</div>
+		<% end %>
+	<% else %>
+	<div class="col-md-12">
+		<h4>You have no packages. Create One!</h4>
 	</div>
-
+	<% end %>
 </div>

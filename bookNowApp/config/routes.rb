@@ -9,7 +9,10 @@ Rails.application.routes.draw do
   get '/stripe', to: "stripe#index", as: 'stripe'
   get '/stripe/authorize', to: "stripe#authorize"
   get '/stripe/oauth/callback', to: "stripe#oauth_callback"
-  post '/webhooks', to: "hooks#receiver", as: "webhooks"
+  
+  get '/webhooks', to: "hooks#redirect"
+  post '/webhooks', to: "hooks#receiver"
+  post '/ajax', to: "ajax#receiver", as: "ajax"
 
   get '/login', to: "sessions#login", as: 'login'
   get '/signup', to: "sessions#signup", as: 'signup'

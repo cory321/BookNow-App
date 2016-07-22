@@ -9,6 +9,10 @@ class HooksController < ApplicationController
 
 	## Check out http://stackoverflow.com/questions/9627580/stripe-webhook-on-rails
 
+	def redirect
+		redirect_to root_path
+	end
+
 	def receiver
 		data = JSON.parse(request.body.read)
 

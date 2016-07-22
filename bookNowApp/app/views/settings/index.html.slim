@@ -1,2 +1,5 @@
 h1 Settings#index
 p Find me in app/views/settings/index.html.slim
+
+=gravatar_image_tag(current_user.email, :alt => current_user_full_name, :gravatar => { :size => 200 })
+

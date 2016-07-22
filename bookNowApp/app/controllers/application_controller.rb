@@ -23,6 +23,11 @@ class ApplicationController < ActionController::Base
   @current_user ||= User.find_by_id(session[:user_id])
  end
 
+ def current_user_full_name
+   current_user.first_name + " " + current_user.last_name
+ end
+
  helper_method :current_user #make it available in views (it will be available in all controllers as well
+ helper_method :current_user_full_name
 
 end

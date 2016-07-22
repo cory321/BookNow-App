@@ -14,11 +14,12 @@ class PackagesController < ApplicationController
 
 	def create
 		@package = @user.packages.create package_params
-		if @package.save
-			redirect_to user_packages_path(@user), flash: {success: "Your package has been added"}
-		else
-			render :new
-		end
+			
+			if @package.save
+				redirect_to user_packages_path(current_user)
+			else
+				redirect_to user_packages_path(current_user), flash: {alert: "Error: Your package was not created"}
+			end
 	end
 
 	def show
@@ -28,7 +29,7 @@ class PackagesController < ApplicationController
 	private
 
 	def package_params
-		params.require(:package).permit(:name, :price, :item_ids => [])
+		params.require(:package).permit(:name, :price)
 	end
 
 	def set_user

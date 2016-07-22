@@ -30,7 +30,9 @@ Rails.application.routes.draw do
     resources :events, shallow: true
     resources :couples, shallow: true
     resources :assistants, shallow: true
-    resources :packages, shallow: true
+    resources :packages, shallow: true do
+      resources :items, shallow:true, only: :create
+    end
   end
 
   get 'assistants/:id/crop', to: 'assistants#crop_avatar', as: "assistants_crop_avatar"

@@ -17,7 +17,7 @@
 
 <% unless @couples.blank? %>
   <% @years.each do |year_table| %>
-    <% if year_table.blank? == false %>
+    <% unless year_table.blank? %>
       <div class="table-responsive">
       <h3><%= year_table[0].wedding_date.year %></h3>
           <table class="table" data-sort="table">

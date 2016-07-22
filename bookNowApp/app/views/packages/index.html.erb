@@ -10,34 +10,43 @@
 	</div>
 </div>
 
-<div class="row">
-	<% if @packages.any? %>
-		<% @packages.each do |package| %>
-			<div class="col-md-4">
-				<div class="thumbnail">
-				  <!-- <img class="card-img-top" data-src="..." alt="Card image cap"> -->
-				  <div class="card-block">
-				    <h4 class="card-title"><span class="icon icon-documents"><%= package.name %></h4>
-				    <p class="card-text">
-				   	 Price: <%= package.price %>
-					</p>
-					
+<% if @packages.any? %>
+	<% @packages.in_groups_of(3, false).each do |group| %>
+	<div class="row">
+		<% group.each do |package| %>
+		<div class="col-md-4">
+			<div class="thumbnail">
+			<!-- <img class="card-img-top" data-src="..." alt="Card image cap"> -->
+				<div class="card-block">
+					<h4 class="card-title"><span class="icon icon-documents"><%= package.name %></h4>
+					<p class="card-text">Price: <%= package.price %></p>
+
 					<% if package.items.any? %>
-					<ul>
-						<% package.items.each do |item| %>
-							<li><%= item.name %></li>
-						<% end %>
-					</ul>
+						<ul>
+							<% package.items.each do |item| %>
+								<li><%= item.name %></li>
+							<% end %>
+						</ul>
 					<% end %>
 
-				    <a href="#" class="btn btn-sm btn-primary-outline">Edit</a>
-				  </div>
+					<% item = package.items.new %>
+					<%= form_for([package, item], html:{class:"form", role:"form"}) do |f| %>
+						<fieldset class="form-group">
+							<%= f.text_field :name, class:"form-control", placeholder:"Item Name", :required => true %>
+						</fieldset>
+					
+						<%= f.submit "Add Item", class:"btn btn-primary" %>
+					<% end %>
 				</div>
 			</div>
+		</div>
 		<% end %>
-	<% else %>
-	<div class="col-md-12">
-		<h4>You have no packages. Create One!</h4>
 	</div>
 	<% end %>
-</div>
+<% else %>
+	<div class="row">
+		<div class="col-md-12">
+			<h4>You have no packages. Create One!</h4>
+		</div>
+	</div>
+<% end %>
